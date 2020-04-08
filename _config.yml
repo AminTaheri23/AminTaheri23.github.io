@@ -1,0 +1,13 @@
+# Site settings
+title: Seyed Mohammad Amin Taheri Ghahfarokhi
+email: amintaheri90@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
+
+twitter_username: sed_amin
+github_username: AminTaheri23
+linkedin_username: sed-amin-taheri
+
+# Build settings
+markdown: kramdown
