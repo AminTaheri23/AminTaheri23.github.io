@@ -226,12 +226,12 @@ header {
     position: relative;
     display: block;
     max-width: 650px;
-    margin: 0 auto;
+    margin: 1 auto;
     .portfolio-box-caption {
         color: white;
         opacity: 0;
         display: block;
-        background: rgba( $theme-primary, .9 );
+        background: rgba( $theme-primary, .8 );
         position: absolute;
         bottom: 0;
         text-align: center;
@@ -251,11 +251,11 @@ header {
             }
             .project-category {
                 text-transform: uppercase;
-                font-weight: 600;
+                font-weight: 700;
                 font-size: 14px;
             }
             .project-name {
-                font-size: 18px;
+                font-size: 19px;
             }
         }
     }
