@@ -1,4 +1,12 @@
-
+.someDiv {
+    line-height: 0.7em;
+    height: 4.2em;       /* height is 2x line-height, so two lines will display */
+    overflow: auto;  /* prevents extra lines from being visible */
+}
+.img-caption {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .gallery-title
 {
     font-size: 36px;
