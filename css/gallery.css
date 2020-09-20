@@ -30,7 +30,7 @@
     border-radius: 5px;
     text-align: center;
     color:rgb(45, 176, 209);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 
 }
 .filter-button:hover
@@ -45,7 +45,7 @@
 }
 .btn-default:active .filter-button:active
 {
-    background-color: rgb(45, 176, 209);
+    background-color: rgb(28, 70, 209);
     color: white;
 }
 
