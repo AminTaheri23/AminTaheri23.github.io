@@ -6,6 +6,7 @@
 .img-caption {
     margin-top: 5px;
     margin-bottom: 5px;
+    color: #ffffff;
 }
 .gallery-title
 {
@@ -26,10 +27,10 @@
 .filter-button
 {
     font-size: 18px;
-    border: 1px solid rgb(45, 176, 209);
+    /* border: 1px solid rgb(45, 176, 209); */
     border-radius: 5px;
     text-align: center;
-    color:rgb(45, 176, 209);
+    color:rgb(20, 61, 72);
     margin-bottom: 20px;
 
 }
