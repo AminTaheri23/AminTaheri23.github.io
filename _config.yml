@@ -16,4 +16,4 @@ medium_username: amintaheri90
 kaggle_username: amintaheri90
 
 # Build settings
-markdown: kramdown
+markdown: GFM
