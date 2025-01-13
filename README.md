@@ -11,3 +11,39 @@ See it live in action at <https://amintaheri23.github.io>
 
 - Start by adding your info in `_config.yml`
 - In `_layouts/front.html` reorder or remove section as you prefer.
+
+# Install Ruby and Bundler
+
+Ensure Ruby and Bundler are installed:
+
+```bash
+sudo apt update
+sudo apt install ruby-full build-essential zlib1g-dev
+echo '# Install Ruby Gems to ~/.gem' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/.gem"' >> ~/.bashrc
+echo 'export PATH="$HOME/.gem/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+gem install bundler
+```
+
+# Install Jekyll and Project Dependencies
+
+If `Gemfile` exists in the project root, install the required gems:
+
+```bash
+bundle install
+```
+If not, install Jekyll globally:
+
+```bash
+gem install jekyll
+```
+
+# Build and Serve the Website
+
+Use Jekyll to build and serve your website locally:
+
+```bash
+bundle exec jekyll serve
+jekyll serve
+```
