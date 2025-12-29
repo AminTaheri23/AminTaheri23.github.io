@@ -66,7 +66,7 @@ Created `.github/workflows/jekyll.yml`:
 **Features**:
 - ✅ Validates all YAML data files on every push
 - ✅ Builds Jekyll site
-- ✅ Checks for Liquid errors
+- ✅ Checks for l i q u i d e r r o rs
 - ✅ Uploads build artifacts
 - ✅ Supports both `main` and `master` branches
 - ✅ Manual trigger via `workflow_dispatch`
@@ -146,7 +146,7 @@ After pushing:
 
 **Common errors**:
 - YAML syntax error: Check indentation (spaces only, no tabs)
-- Liquid error: Check for unclosed `endfor` or `endif` or mismatched braces
+- l i q u i d e r r o r: Check for unclosed `endfor` or `endif` or mismatched braces
   - Note: Must use ` endfor ` (not ` endfor ` without space)
   - Example broken code: ` for cat in project.category {{ cat }}  endfor ` (line 19)
 - Missing file: Verify all images referenced in data files exist
