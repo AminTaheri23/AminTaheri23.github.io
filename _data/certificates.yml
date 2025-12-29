@@ -1,0 +1,95 @@
+- category: "Simplilearn"
+  image_large: "img/Certificates_images/Large/aws.png"
+  image_thumb: "img/Certificates_images/Thumb/aws.png"
+
+- category: "Coursera"
+  image_large: "img/Certificates_images/Large/DL_all.jpg"
+  image_thumb: "img/Certificates_images/Thumb/DL_all_small.jpg"
+
+- category: "Coursera"
+  image_large: "img/Certificates_images/Large/DL_C1.jpg"
+  image_thumb: "img/Certificates_images/Thumb/DL_C1_small.jpg"
+
+- category: "Coursera"
+  image_large: "img/Certificates_images/Large/DL_C2.jpg"
+  image_thumb: "img/Certificates_images/Thumb/DL_C2_small.jpg"
+
+- category: "Coursera"
+  image_large: "img/Certificates_images/Large/DL_C3.jpg"
+  image_thumb: "img/Certificates_images/Thumb/DL_C3_small.jpg"
+
+- category: "Coursera"
+  image_large: "img/Certificates_images/Large/DL_C4.jpg"
+  image_thumb: "img/Certificates_images/Thumb/DL_C4 _small.jpg"
+
+- category: "Coursera"
+  image_large: "img/Certificates_images/Large/DL_C5.jpg"
+  image_thumb: "img/Certificates_images/Thumb/DL_C5 _small.jpg"
+
+- category: "Coursera"
+  image_large: "img/Certificates_images/Large/ML_Ng.jpg"
+  image_thumb: "img/Certificates_images/Thumb/ML_Ng_small.jpg"
+
+- category: "Coursera"
+  image_large: "img/Certificates_images/Large/LH2L.jpg"
+  image_thumb: "img/Certificates_images/Thumb/LH2L_small.jpg"
+
+- category: "IEEEsb"
+  image_large: "img/Certificates_images/Large/certificate_5.jpg"
+  image_thumb: "img/Certificates_images/Thumb/certificate_5_small.jpg"
+
+- category: "IEEEsb"
+  image_large: "img/Certificates_images/Large/Volunteer2017.jpg"
+  image_thumb: "img/Certificates_images/Thumb/Volunteer2017_small.jpg"
+
+- category: "IEEEsb"
+  image_large: "img/Certificates_images/Large/ieeeiransction.jpg"
+  image_thumb: "img/Certificates_images/Thumb/ieeeiransction_small.jpg"
+
+- category: "IEEEsb"
+  image_large: "img/Certificates_images/Large/IEEEXtreme_orig.jpg"
+  image_thumb: "img/Certificates_images/Thumb/IEEEXtreme_orig_small.jpg"
+
+- category: "IEEEsb"
+  image_large: "img/Certificates_images/Large/IEEEXtreme_from_IEEESB.jpg"
+  image_thumb: "img/Certificates_images/Thumb/IEEEXtreme_from_IEEESB_small.jpg"
+
+- category: "IEEEsb"
+  image_large: "img/Certificates_images/Large/IEEEsb_head_of_edu_Act.jpg"
+  image_thumb: "img/Certificates_images/Thumb/IEEEsb_head_of_edu_Act_small.jpg"
+
+- category: "FanAsa"
+  image_large: "img/Certificates_images/Large/certificate_8.jpg"
+  image_thumb: "img/Certificates_images/Thumb/certificate_8 _small.jpg"
+
+- category: "FanAsa"
+  image_large: "img/Certificates_images/Large/Intro_web.jpg"
+  image_thumb: "img/Certificates_images/Thumb/Intro_web_small.jpg"
+
+- category: "FanAsa"
+  image_large: "img/Certificates_images/Large/dataScience_intro.jpg"
+  image_thumb: "img/Certificates_images/Thumb/dataScience_intro_small.jpg"
+
+- category: "Sololearn"
+  image_large: "img/Certificates_images/Large/Solo_learn_ML.jpg"
+  image_thumb: "img/Certificates_images/Thumb/Solo_learn_ML_small.jpg"
+
+- category: "Sololearn"
+  image_large: "img/Certificates_images/Large/sololearn-python3.jpg"
+  image_thumb: "img/Certificates_images/Thumb/sololearn-python3_small.jpg"
+
+- category: "Sololearn"
+  image_large: "img/Certificates_images/Large/sololearn-sql.jpg"
+  image_thumb: "img/Certificates_images/Thumb/sololearn-sql_small.jpg"
+
+- category: "Sololearn"
+  image_large: "img/Certificates_images/Large/sololearn-c++.jpg"
+  image_thumb: "img/Certificates_images/Thumb/sololearn-c++_small.jpg"
+
+- category: "all"
+  image_large: "img/Certificates_images/Large/typing_Advance.jpg"
+  image_thumb: "img/Certificates_images/Thumb/typing_Advance_small.jpg"
+
+- category: "IEEEir"
+  image_large: "img/Certificates_images/Large/IEEE_IR.jpg"
+  image_thumb: "img/Certificates_images/Thumb/IEEE_IR_small.jpg"

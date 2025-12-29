@@ -1,2 +1,11 @@
 _site/
 .sass-cache/
+.jekyll-cache/
+*.gem
+Gemfile.lock
+.bundle/
+node_modules/
+vendor/
+*.swp
+*.swo
+*~

@@ -1,0 +1,107 @@
+- title: "MediSightAi Website"
+  category: ["all", "cv", "website"]
+  link: "https://medisightai.netlify.app"
+  image: "img/portfolio/medisight(Custom).png"
+  alt: "Medisightai screenshot"
+  description: "MediSightAi is a startup at Genesis offering HealthTech solutions"
+  github: "https://github.com/AminTaheri23/open-react-template/tree/master"
+  tech_stack: "React - Nextjs - Tailwind - Netilfy"
+
+- title: "BacTermFinder"
+  category: ["all", "etc"]
+  link: "https://github.com/BioinformaticsLabAtMUN/BacTermFinder"
+  image: "img/portfolio/bactermfinder(Custom).png"
+  alt: "BacTermFinder"
+  description: "Bacteria-agnostic Comprehensive Terminator Finder using a CNN Ensemble"
+  github: "https://github.com/BioinformaticsLabAtMUN/BacTermFinder"
+  tech_stack: "Python - CNNs - Bioinformatics"
+
+- title: "ESG Analysis with Transformers"
+  category: ["all", "nlp"]
+  link: "https://github.com/AminTaheri23/ESG-Analysis"
+  image: "img/portfolio/esg.png"
+  alt: "ESG"
+  description: "Sustainability and societal impact of an investment in a business"
+  github: "https://github.com/AminTaheri23/ESG-Analysis"
+  tech_stack: "Pytorch - Sentence Transformers"
+
+- title: "Single Face Extractor script"
+  category: ["all", "cv"]
+  link: "https://github.com/AminTaheri23/single-face-extractor"
+  image: "img/portfolio/single_face.png"
+  alt: "Single Face Extractor"
+  description: "Extracting a set frames that only have a single face in it"
+  github: "https://github.com/amintaheri23/single-face-extractor"
+  tech_stack: "Python - OpenCV - RetinaFace"
+
+- title: "Score based Face Quality Assessment"
+  category: ["all", "cv"]
+  link: "https://github.com/amintaheri23/Score-based-Face-Quality-Assessment-FQA"
+  image: "img/portfolio/fqa.png"
+  alt: "Face Quality Assessment"
+  description: "An implementation of a paper for assessing face quality"
+  github: "https://github.com/amintaheri23/Score-based-Face-Quality-Assessment-FQA"
+  tech_stack: "Python - OpenCV - CNN - LBP"
+
+- title: "Churn Customers - Deep learning"
+  category: ["all", "strucdata"]
+  link: "https://github.com/amintaheri23/Churn-Customers-Prediction"
+  image: "img/portfolio/Churn_Blog.png"
+  alt: "Churn Customers Prediction"
+  description: "Predincting wheter a customer leave bussiness or not"
+  github: "https://github.com/amintaheri23/Churn-Customers-Prediction"
+  tech_stack: "Python - Tensorflow - Keras"
+
+- title: "Personal Website"
+  category: ["all", "website"]
+  link: "https://github.com/AminTaheri23/AminTaheri23.github.io"
+  image: "img/portfolio/website.png"
+  alt: "Website"
+  description: "This personal website! Featuring all social handles and my projects overview"
+  github: "https://github.com/AminTaheri23/AminTaheri23.github.io"
+  tech_stack: "GitHub Pages - Jekyll - Bootstrap - jQuery"
+
+- title: "My Blog"
+  category: ["all", "website"]
+  link: "https://amintaheri23.github.io/blog"
+  image: "img/portfolio/blog(Custom).png"
+  alt: "blog screenshot"
+  description: "I have many ideas I want to share with you. Yes you! Specially you!"
+  github: "https://github.com/AminTaheri23/blog"
+  tech_stack: "GitHub Pages - Jekyll - Bootstrap - jQuery"
+
+- title: "Deep learning Stanford CS230 notes"
+  category: ["all", "etc"]
+  link: "https://github.com/amintaheri23/DeepLearnig-Notes-AndrewNg-Course"
+  image: "img/portfolio/cs230.jpg"
+  alt: "cs230 notes"
+  description: "My notes when auditing Andrew Ng's and Kian Katan Course"
+  github: "https://github.com/amintaheri23/DeepLearnig-Notes-AndrewNg-Course"
+  tech_stack: "Python - Tensorflow - Keras - Markdown"
+
+- title: "Persian NER with Deep Learning"
+  category: ["all", "nlp"]
+  link: "https://github.com/amintaheri23/Deep-Persian-NER"
+  image: "img/portfolio/ner.png"
+  alt: "Deep NLP Persian NER"
+  description: "Named Entity Recognition for Persian with bi-LSTM CRF"
+  github: "https://github.com/amintaheri23/Deep-Persian-NER"
+  tech_stack: "Python - Keras - LSTM - CRF"
+
+- title: "IMDB reviews sentiment analysis with GPT2"
+  category: ["all", "nlp"]
+  link: "https://github.com/amintaheri23/IMDB-sentiment-classification-GPT2"
+  image: "img/portfolio/gpt2.png"
+  alt: "IMDB Review GPT-2"
+  description: "Classifying sentiment of reviews with GPT-2 pretrained language model"
+  github: "https://github.com/amintaheri23/IMDB-sentiment-classification-GPT2"
+  tech_stack: "Python - Transformers - Language Models - HuggingFace"
+
+- title: "Diabetes Detection Webapp"
+  category: ["all", "strucdata"]
+  link: "https://github.com/amintaheri23/Pima-indian-diabetes-Deep-Learning"
+  image: "img/portfolio/pima.jpg"
+  alt: "diabetes detection deep learning webapp"
+  description: "A responsive webapp deployed on cloud, for detecting diabetes from Pima Indian dataset with ML + DL"
+  github: "https://github.com/amintaheri23/Pima-indian-diabetes-Deep-Learning"
+  tech_stack: "Python - Scikit Learn - Keras - Stramlit - Heroku"

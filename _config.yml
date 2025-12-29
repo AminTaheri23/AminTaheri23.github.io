@@ -17,3 +17,28 @@ kaggle_username: amintaheri90
 
 # Build settings
 markdown: GFM
+
+# Development settings (commented out for GitHub Pages)
+# host: 0.0.0.0
+# port: 4000
+# livereload: true
+
+# Exclude
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - convert-images-to-webp.sh
+  - REFACTORING.md
+  - REFACTORING_SUMMARY.md
+  - BOOTSTRAP5_MIGRATION.md
+  - cv_old.pdf
+  - cv_old2.pdf

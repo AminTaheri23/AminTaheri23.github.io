@@ -1,49 +1,83 @@
-# Creative Theme for Jekyll (Amin Taheri CV)
+# Personal Website - Amin Taheri
 
-A Jekyll implementation of the [Creative Theme](http://startbootstrap.com/template-overviews/creative/) template by [Start Bootstrap](http://startbootstrap.com).
+A refactored Jekyll website based on the [Creative Theme](http://startbootstrap.com/template-overviews/creative/) template.
 
-Creative is a one page Bootstrap theme for creatives, small businesses, and other multipurpose uses.
-The theme includes a number of rich features and plugins that you can use as a great boilerplate for your next Jekyll project! 
+Live at: <https://amintaheri23.github.io>
 
-See it live in action at <https://amintaheri23.github.io>
+## Quick Start
 
-## To use the Creative Theme template in your project
+### Adding Content
 
-- Start by adding your info in `_config.yml`
-- In `_layouts/front.html` reorder or remove section as you prefer.
+Edit data files to add content:
+- `_data/projects.yml` - Add portfolio projects
+- `_data/certificates.yml` - Add certificates
+- `_data/photos.yml` - Add gallery photos
 
-# Install Ruby and Bundler
-
-Ensure Ruby and Bundler are installed:
-
-```bash
-sudo apt update
-sudo apt install ruby-full build-essential zlib1g-dev
-echo '# Install Ruby Gems to ~/.gem' >> ~/.bashrc
-echo 'export GEM_HOME="$HOME/.gem"' >> ~/.bashrc
-echo 'export PATH="$HOME/.gem/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-gem install bundler
-```
-
-# Install Jekyll and Project Dependencies
-
-If `Gemfile` exists in the project root, install the required gems:
+### Running Locally
 
 ```bash
+# Install dependencies
 bundle install
-```
-If not, install Jekyll globally:
 
-```bash
-gem install jekyll
-```
-
-# Build and Serve the Website
-
-Use Jekyll to build and serve your website locally:
-
-```bash
+# Build and serve
 bundle exec jekyll serve
-jekyll serve
 ```
+
+Site available at: http://localhost:4000
+
+## Documentation
+
+- **[GITHUB_PAGES.md](GITHUB_PAGES.md)** - GitHub Pages deployment guide
+- **[REFACTORING_SUMMARY.md](REFACTORING_SUMMARY.md)** - Complete refactoring documentation
+- **[BOOTSTRAP5_MIGRATION.md](BOOTSTRAP5_MIGRATION.md)** - Bootstrap 5 upgrade guide
+
+## Site Structure
+
+```
+.
+├── _config.yml              # Site configuration
+├── _data/                  # Data files (projects, certificates, photos)
+├── _includes/               # HTML components
+├── _layouts/               # Page layouts
+├── _sass/                  # SCSS stylesheets
+├── css/                    # Compiled CSS
+├── js/                     # JavaScript
+├── img/                    # Images
+└── index.html             # Homepage
+```
+
+## Features
+
+- Data-driven content management (YAML files)
+- Dynamic portfolio/gallery filtering
+- Responsive design (Bootstrap 3)
+- Jekyll static site generation
+- GitHub Pages deployment
+
+## GitHub Pages
+
+This site automatically deploys via GitHub Pages. See [GITHUB_PAGES.md](GITHUB_PAGES.md) for:
+- Deployment configuration
+- Troubleshooting builds
+- Adding new content
+
+## Development
+
+### Image Optimization
+
+Convert images to WebP for better performance:
+```bash
+./convert-images-to-webp.sh
+```
+
+### Bootstrap 5 Migration
+
+See [BOOTSTRAP5_MIGRATION.md](BOOTSTRAP5_MIGRATION.md) for upgrade guide:
+- Incremental migration plan
+- Component-by-component approach
+- Class reference mapping
+
+## License
+
+Based on [Creative Theme](http://startbootstrap.com/template-overviews/creative/) by [Start Bootstrap](http://startbootstrap.com).
+

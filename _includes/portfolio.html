@@ -1,0 +1,76 @@
+<section class="bg-primary" id="projects" , style="padding-top: 30px; padding-bottom: 30px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Projects</h2>
+                <hr class="light">
+                <div align="center">
+                    <h2 class="img-caption"><b>Select a Category</b></h2>
+                    <div class="text-center" style="margin-top: 1cm;">
+                      <button class="btn btn-default filter-button active" data-filter="all">All</button>
+                      <button class="btn btn-default filter-button " data-filter="cv">Computer Vision</button>
+                      <button class="btn btn-default filter-button" data-filter="nlp">Natural Language Processing</button>
+                      <button class="btn btn-default filter-button" data-filter="strucdata">Machine Learning</button>
+                      <button class="btn btn-default filter-button" data-filter="website">Website</button>
+                      <button class="btn btn-default filter-button" data-filter="etc">Other</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @media screen and (max-width : 320px)
+        {
+          h3
+          {
+            font-size:7px;
+          }
+        }
+        @media screen 
+        {
+          h3
+          {
+            font-size:26px;
+            font-weight: bold;
+          }
+        }
+        </style>
+        
+        <section id="portfolio" style="padding: 20px;">
+            <div class="container">
+                <div class="row">
+                    {% assign projects = site.data.projects %}
+                    {% for project in projects %}
+                    <div class="filter {% for cat in project.category %}{{ cat }} {% endfor %} col-md-4">
+                        <div class="thumbnail">
+                            <a href="{{ project.link }}" target="_blank" class="portfolio-box">
+                                <img src="{{ project.image }}" alt="{{ project.alt }}" class="img-thumbnail">
+                                <div class="portfolio-box-caption">
+                                    <div class="portfolio-box-caption-content">
+                                        <div class="project-category text-faded">
+                                            {{ project.category[1] | capitalize }}
+                                        </div>
+                                        <div class="project-name">
+                                            🔗
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="caption">
+                                <h3 media="screen">{{ project.title }}</h3>
+                                <p>{{ project.description }}</p>
+                                {% if project.github %}
+                                <a class="github-button" href="{{ project.github }}"
+                                    data-icon="octicon-star" data-size="large" data-show-count="true"
+                                    aria-label="Star {{ project.title }} on GitHub">Star</a>
+                                {% endif %}
+                                <div class="well well-sm">{{ project.tech_stack }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+</section>
