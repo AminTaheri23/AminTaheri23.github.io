@@ -39,8 +39,7 @@
     
     <br />
 
-    {% assign photos = site.data.photos %}
-    {% for photo in photos %}
+    {% for photo in site.data.photos %}
     <div class="gallery_product col-lg-4 col-md-4 col-sm-4   filter {{ photo.category }}" style="margin-bottom:1%">
       <div class="thumbnail" style="margin-bottom:1%; ">
         <a href="{{ photo.image }}">

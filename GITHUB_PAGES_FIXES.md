@@ -16,7 +16,7 @@ The `join` filter syntax was causing issues.
 **Solution**: Changed to explicit for loop for categories:
 ```liquid
 <!-- FIXED -->
-<div class="filter {% for cat in project.category %}{{ cat }} {% endfor %} col-md-4">
+<div class="filter  for cat in project.category {{ cat }}  endfor  col-md-4">
 ```
 
 ### 2. ✅ GitHub Pages Configuration
@@ -146,7 +146,9 @@ After pushing:
 
 **Common errors**:
 - YAML syntax error: Check indentation (spaces only, no tabs)
-- Liquid error: Check for unclosed `{% endfor %}` or `{% endif %}`
+- Liquid error: Check for unclosed `endfor` or `endif` or mismatched braces
+  - Note: Must use ` endfor ` (not ` endfor ` without space)
+  - Example broken code: ` for cat in project.category {{ cat }}  endfor ` (line 19)
 - Missing file: Verify all images referenced in data files exist
 
 ### If GitHub Pages Shows 404

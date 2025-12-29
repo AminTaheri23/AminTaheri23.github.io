@@ -5,7 +5,8 @@ _site/
 Gemfile.lock
 .bundle/
 node_modules/
-vendor/
+vendor/bundle/
 *.swp
 *.swo
 *~
+_vendor/bundle/

@@ -40,16 +40,15 @@
         <section id="portfolio" style="padding: 20px;">
             <div class="container">
                 <div class="row">
-                    {% assign projects = site.data.projects %}
-                    {% for project in projects %}
-                    <div class="filter {% for cat in project.category %}{{ cat }} {% endfor %} col-md-4">
+                    {% for project in site.data.projects %}
+                    <div class="filter all {{ project.category[1] }} col-md-4">
                         <div class="thumbnail">
                             <a href="{{ project.link }}" target="_blank" class="portfolio-box">
                                 <img src="{{ project.image }}" alt="{{ project.alt }}" class="img-thumbnail">
                                 <div class="portfolio-box-caption">
                                     <div class="portfolio-box-caption-content">
                                         <div class="project-category text-faded">
-                                            {{ project.category[1] | capitalize }}
+                                            {% if project.category[1] %}{{ project.category[1] | capitalize }}{% endif %}
                                         </div>
                                         <div class="project-name">
                                             🔗
