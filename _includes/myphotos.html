@@ -41,9 +41,13 @@
 
     {% for photo in site.data.photos %}
     <div class="gallery_product col-lg-4 col-md-4 col-sm-4   filter {{ photo.category }}" style="margin-bottom:1%">
-      <div class="thumbnail" style="margin-bottom:1%; ">
+      <div class="thumbnail" style="margin-bottom:1%;">
+        {% assign webp_image = photo.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' %}
         <a href="{{ photo.image }}">
-          <img src="{{ photo.image }}" style="width:100%">
+          <picture>
+            <source srcset="{{ webp_image }}" type="image/webp">
+            <img src="{{ photo.image }}" style="width:100%">
+          </picture>
           <div class="caption text-center someDiv" style="padding: 0%;">
             <h4 class="img-caption">{{ photo.title }}</h4>
             <h6 class="img-caption">{{ photo.description }}</h6>

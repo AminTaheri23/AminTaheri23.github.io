@@ -8,7 +8,7 @@
                     <h2 class="img-caption"><b>Select a Category</b></h2>
                     <div class="text-center" style="margin-top: 1cm;">
                       <button class="btn btn-default filter-button active" data-filter="all">All</button>
-                      <button class="btn btn-default filter-button " data-filter="cv">Computer Vision</button>
+                      <button class="btn btn-default filter-button" data-filter="cv">Computer Vision</button>
                       <button class="btn btn-default filter-button" data-filter="nlp">Natural Language Processing</button>
                       <button class="btn btn-default filter-button" data-filter="strucdata">Machine Learning</button>
                       <button class="btn btn-default filter-button" data-filter="website">Website</button>
@@ -44,7 +44,11 @@
                     <div class="filter all {{ project.category[1] }} col-md-4">
                         <div class="thumbnail">
                             <a href="{{ project.link }}" target="_blank" class="portfolio-box">
-                                <img src="{{ project.image }}" alt="{{ project.alt }}" class="img-thumbnail">
+                                {% assign webp_image = project.image | replace: '.png', '.webp' | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' %}
+                                <picture>
+                                    <source srcset="{{ webp_image }}" type="image/webp">
+                                    <img src="{{ project.image }}" alt="{{ project.alt }}" class="img-thumbnail">
+                                </picture>
                                 <div class="portfolio-box-caption">
                                     <div class="portfolio-box-caption-content">
                                         <div class="project-category text-faded">

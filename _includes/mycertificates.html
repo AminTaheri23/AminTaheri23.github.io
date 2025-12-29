@@ -38,9 +38,13 @@
 
     {% for cert in site.data.certificates %}
     <div class="gallery_product col-lg-4 col-md-4 col-sm-4 filter {{ cert.category }}" style="margin-bottom:1%">
-      <div class="thumbnail" style="margin-bottom:1%; ">
+      <div class="thumbnail" style="margin-bottom:1%;">
         <a href="{{ cert.image_large }}">
-          <img src="{{ cert.image_thumb }}" style="width:100%">
+          {% assign webp_thumb = cert.image_thumb | replace: '.png', '.webp' | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' %}
+          <picture>
+            <source srcset="{{ webp_thumb }}" type="image/webp">
+            <img src="{{ cert.image_thumb }}" style="width:100%">
+          </picture>
         </a>
       </div>
     </div>
