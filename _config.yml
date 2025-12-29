@@ -42,3 +42,7 @@ exclude:
   - BOOTSTRAP5_MIGRATION.md
   - cv_old.pdf
   - cv_old2.pdf
+  - WEBP_IMPLEMENTATION.md
+  - MIGRATION_ROLLBACK.md
+  - GITHUB_PAGES_FIXES.md
+  - BOOTSTRAP_STATUS.md
