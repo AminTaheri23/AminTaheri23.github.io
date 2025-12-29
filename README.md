@@ -80,4 +80,3 @@ See [BOOTSTRAP5_MIGRATION.md](BOOTSTRAP5_MIGRATION.md) for upgrade guide:
 ## License
 
 Based on [Creative Theme](http://startbootstrap.com/template-overviews/creative/) by [Start Bootstrap](http://startbootstrap.com).
-
