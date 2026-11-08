@@ -1,0 +1,36 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Marquee Hero",
+  "theme": "console",
+  "axes": "dark/grotesk-sans/chromatic-amber",
+  "hero": "Stage (/), Banner (/gallery/, /certificates/)",
+  "nav": "edge-aligned",
+  "footer": "letter close",
+  "imagery": "the owner photographs in duotone, project screenshots and certificates in true colour",
+  "photos": [],
+  "entry": "Stage",
+  "fingerprint": "console/marquee/stage/edge-aligned/letter-close",
+  "sections": [
+   "Hero (Stage)",
+   "Biography (prose + panel with trail)",
+   "Projects (band, chips, one-surface index)",
+   "Contact (close)",
+   "Footer (letter close)"
+  ],
+  "signature": "the name at marquee scale beside the black-and-white portrait",
+  "waived": [
+   "8",
+   "44c",
+   "59",
+   "83"
+  ],
+  "prompt": "personal site of an ML and bioinformatics researcher: projects, photo and certificate archives, get in touch",
+  "draw": "674e0a",
+  "genre": "modern-minimal",
+  "copy": "verbatim",
+  "date": "2026-11-08"
+ }
+]
