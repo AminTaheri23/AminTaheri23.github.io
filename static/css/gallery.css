@@ -1,0 +1,81 @@
+/* Gallery pages (/gallery/, /certificates/): Banner page head, sticky chip bar, glossary column, image grid.
+   Loads after tokens.css, base.css, site.css. Shared classes (.chips, .chip, .glossary, .duotone, .frame, figcaption, .btn) are styled in site.css;
+   this sheet only places them. */
+
+.gallery { --gallery-bar-h: 4.25rem; }
+
+/* ---------- Page head (Banner, compact) ---------- */
+.page-head { padding-block: var(--space-2xl) var(--space-xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.page-head__inner { display: grid; gap: var(--space-lg); align-items: end; }
+.page-head__text { display: grid; gap: var(--space-sm); min-width: 0; }
+.page-head__title { font-size: var(--text-display-s); line-height: 1.03; max-width: 20ch; overflow-wrap: break-word; min-width: 0; }
+.page-head__line { margin: 0; max-width: 52ch; font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
+.page-head__back { justify-self: start; }
+@media (max-width: 40rem) {
+  .page-head { padding-block: var(--space-xl) var(--space-lg); }
+  .page-head__inner { gap: var(--space-md); }
+}
+@media (min-width: 40rem) {
+  .page-head__inner { grid-template-columns: minmax(0, 1fr) auto; }
+  .page-head__back { justify-self: end; }
+}
+
+/* ---------- Chip bar (sticky under the nav once JS makes the chips work) ---------- */
+.gallery__bar { background: var(--color-paper); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.js .gallery__bar { position: sticky; top: var(--nav-h); z-index: var(--z-sticky); }
+.gallery__bar-inner { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2xs) var(--space-md); min-height: var(--gallery-bar-h); padding-block: var(--space-sm); }
+.gallery__bar .chips__label { margin: 0; white-space: nowrap; }
+.gallery__bar .chips { min-width: 0; }
+@media (max-width: 40rem) {
+  /* One scrollable row on phones so the sticky bar stays short. */
+  .gallery__bar-inner { display: grid; gap: var(--space-2xs); padding-block: var(--space-xs); }
+  .gallery__bar .chips { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; padding: var(--space-2xs); margin: calc(-1 * var(--space-2xs)); }
+  .gallery__bar .chips::-webkit-scrollbar { display: none; }
+  .gallery__bar .chip { flex: 0 0 auto; }
+}
+
+/* ---------- Body: glossary column beside the grid at 64rem and up ---------- */
+.gallery__body { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); padding-block: var(--space-xl) var(--section-gap-s); }
+.gallery__aside { padding: var(--space-md); background: var(--color-paper-2); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); }
+.gallery__aside-head { margin: 0 0 var(--space-sm); max-width: none; font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; line-height: 1.4; letter-spacing: 0; color: var(--color-ink); }
+.gallery__aside .glossary { grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: var(--space-xs) var(--space-lg); }
+@media (max-width: 63.99rem) {
+  /* Above the grid: each entry runs as one line of term then description, to keep the grid near the top. */
+  .gallery__aside .glossary__item { display: block; }
+  .gallery__aside .glossary dt, .gallery__aside .glossary dd { display: inline; }
+  .gallery__aside .glossary dt { margin-right: var(--space-2xs); }
+}
+@media (min-width: 64rem) {
+  .gallery__body { grid-template-columns: minmax(0, 17rem) minmax(0, 1fr); gap: var(--space-2xl); }
+  .gallery__aside { align-self: start; }
+  .gallery__aside .glossary { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
+}
+/* Pinned beside the grid only where the whole glossary fits under the nav and the chip bar. */
+@media (min-width: 64rem) and (min-height: 56rem) {
+  .gallery__aside { position: sticky; top: calc(var(--nav-h) + var(--gallery-bar-h) + var(--space-lg)); }
+}
+
+/* ---------- Grid ---------- */
+.gallery__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl) var(--space-lg); margin: 0; padding: 0; list-style: none; align-content: start; }
+@media (min-width: 36rem) { .gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 52rem) { .gallery__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 64rem) { .gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 76rem) { .gallery__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.gallery__grid--certs { row-gap: var(--space-lg); }
+.filter-item { min-width: 0; }
+
+/* Photos: duotone, 16:10 like every source, caption beneath. */
+.shot__link { display: block; border-radius: var(--radius-card); text-decoration: none; }
+.shot__media { aspect-ratio: 16 / 10; transition: outline-color var(--dur-short) var(--ease-out); }
+.shot__media img { width: 100%; height: 100%; object-fit: cover; }
+.shot__link:hover .shot__media { outline-color: var(--color-muted); }
+.shot figcaption { overflow-wrap: break-word; }
+
+/* Certificates: true colour at their natural 1024 x 740 shape, nothing cropped. */
+.cert { display: block; border-radius: var(--radius-card); text-decoration: none; }
+.cert__media { background: var(--color-paper-3); transition: outline-color var(--dur-short) var(--ease-out); }
+.cert__media img { width: 100%; height: auto; }
+.cert:hover .cert__media { outline-color: var(--color-muted); }
+.shot__link:focus-visible, .cert:focus-visible { border-radius: var(--radius-card); }
+
+@media (prefers-reduced-motion: reduce) { .shot__media, .cert__media { transition: none; } }

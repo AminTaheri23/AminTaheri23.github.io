@@ -1,8 +1,55 @@
 {% extends "base.html" %}
-{# Stub from A1; W2 replaces this file. #}
+{#- Photo gallery. Content ported verbatim from _includes/call-to-gallery.html, _includes/myphotos.html and data/photos.yml (C1, C2). -#}
 {% block title %}Gallery – Amin Taheri{% endblock title %}
+{% block head_extra %}<link rel="stylesheet" href="{{ get_url(path='css/gallery.css') }}">{% endblock head_extra %}
 {% block content %}
-<section class="section" id="about">
-  <div class="container"><h1>Gallery</h1></div>
+<section id="about" class="page-head" aria-labelledby="page-title">
+  <div class="container page-head__inner">
+    <div class="page-head__text">
+      <h1 id="page-title" class="page-head__title">Gallery</h1>
+      <p class="page-head__line">These are selected photos.</p>
+    </div>
+    <a class="btn btn--quiet page-head__back" href="{{ get_url(path='@/_index.md') }}">Back</a>
+  </div>
+</section>
+
+<section class="gallery" data-filter-scope>
+  <div class="gallery__bar">
+    <div class="container gallery__bar-inner">
+      {{ <chips id="photos" label="Select a category" filters={[["all","All"],["CACTB","CACTB"],["IEEEsb","IEEE IAUCTB"],["IEEEir","IEEE IR"],["Psimap","Psimap"],["Rahhat","Rahhat"],["FanAsa","FanAsa"],["Digikala","DK Next"]]} /> }}
+    </div>
+  </div>
+
+  <div class="container gallery__body">
+    <aside class="gallery__aside" aria-labelledby="photos-glossary">
+      <h3 class="gallery__aside-head" id="photos-glossary">Description:</h3>
+      {{ <glossary entries={[
+        ["IAUCTB","Azad University Central Tehran Branch","all IEEEsb CACTB"],
+        ["CACTB","Computer Association of IAUCTB","CACTB"],
+        ["IEEE","Institute of Electrical and Electronics Engineers","IEEEsb IEEEir"],
+        ["IEEE IAUCTB","IEEE student branch of IAUCTB","IEEEsb"],
+        ["IEEE Iran section","IEEE Iran Section under supervision of Region 8","IEEEir"],
+        ["Psimap","Internet of Things Smart home startup","Psimap"],
+        ["Rahhat","User Generated Content for Company reviewing","Rahhat"],
+        ["FanAsa Academy","Academy of Specialized Courses","FanAsa"],
+        ["Digikala Next","Digikala's arm of innovation, A famous Venture Capital","Digikala"]
+      ]} /> }}
+    </aside>
+
+    {%- set photos = load_data(path="data/photos.yml") %}
+    <ul class="grid gallery__grid gallery__grid--photos">
+    {%- for photo in photos %}
+      {%- set thumb = resize_image(path=photo.image, width=800, op="fit_width", format="webp", quality=75) %}
+      <li class="filter-item" data-categories="{{ photo.category }}">
+        <figure class="shot">
+          <a class="lightbox-link shot__link" href="{{ get_url(path=photo.image) }}" data-caption-title="{{ photo.title }}" data-caption-desc="{{ photo.description }}">
+            <div class="duotone frame shot__media"><img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ photo.title }}: {{ photo.description }}" loading="{{ "eager" if loop.index <= 3 else "lazy" }}" decoding="async"></div>
+          </a>
+          <figcaption><span class="caption__title">{{ photo.title }}</span> {{ photo.description }}</figcaption>
+        </figure>
+      </li>
+    {%- endfor %}
+    </ul>
+  </div>
 </section>
 {% endblock content %}
