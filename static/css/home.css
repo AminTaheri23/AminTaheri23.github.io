@@ -70,12 +70,14 @@
   .hero__social .social__link { width: 100%; }
 }
 
-/* Phone and small tablet: one column, text first, the portrait across the container beneath. */
+/* Phone and small tablet: one column with the portrait shown first (visual order only; the markup and reading order stay text first),
+   a 4:3 head-and-shoulders crop, so the face, the name and the MUN line share the first screen. */
 @media (max-width: 47.99rem) {
-  .hero { padding-block: var(--space-xl) var(--space-2xl); }
-  .hero__inner { grid-template-columns: minmax(0, 1fr); }
+  .hero { padding-block: var(--space-md) var(--space-lg); }
+  .hero__inner { --hero-gap: var(--space-lg); grid-template-columns: minmax(0, 1fr); }
   .hero__name { font-size: clamp(4rem, 10cqi, 9rem); }
-  .hero__portrait { justify-self: stretch; aspect-ratio: 1 / 1; }
+  .hero__portrait { order: -1; justify-self: stretch; aspect-ratio: 4 / 3; }
+  .hero__portrait img { object-position: 50% 22%; }
 }
 
 @media (max-width: 40rem) {
@@ -155,8 +157,18 @@
 @media (max-width: 60rem) {
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+/* Phones: each project is a compact row, a square thumbnail beside the text, so the twelve fit in about half the scroll. Nothing is dropped. */
 @media (max-width: 40rem) {
+  .projects__head { gap: var(--space-lg); margin-bottom: var(--space-lg); }
   .project-grid { grid-template-columns: minmax(0, 1fr); }
-  .project { padding: var(--space-md); }
+  /* The thumbnail sits beside the title and description; categories, stack and star run the full width under them. */
+  .project { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: var(--space-2xs) var(--space-md); align-items: start; padding: var(--space-md); }
+  .project__body { display: contents; }
+  .project__shot { grid-row: 1 / span 2; aspect-ratio: 1 / 1; margin-bottom: 0; }
+  .project__title { grid-column: 2; font-size: var(--text-lg); line-height: 1.25; }
+  .project__desc { grid-column: 2; }
+  .project__cats, .project__stack, .project__star { grid-column: 1 / -1; }
+  .project__cats { margin-top: var(--space-xs); }
+  .project__star { margin-top: 0; padding-top: 0; }
 }
 

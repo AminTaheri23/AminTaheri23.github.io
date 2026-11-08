@@ -12,7 +12,7 @@
 .page-head__line { margin: 0; max-width: 52ch; font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
 .page-head__back { justify-self: start; }
 @media (max-width: 40rem) {
-  .page-head { padding-block: var(--space-xl); }
+  .page-head { padding-block: var(--space-lg); }
   .page-head__inner { gap: var(--space-md); }
 }
 @media (min-width: 40rem) {
@@ -69,6 +69,7 @@
 
 /* ---------- Grid ---------- */
 .gallery__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl) var(--space-lg); margin: 0; padding: 0; list-style: none; align-content: start; }
+@media (max-width: 35.99rem) { .gallery__grid { row-gap: var(--space-lg); } }
 @media (min-width: 36rem) { .gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 52rem) { .gallery__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (min-width: 64rem) { .gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

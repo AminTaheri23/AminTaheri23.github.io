@@ -38,6 +38,11 @@ Switzer 500 for heads (hero at -0.04em, section heads -0.03em, line-height 1.02)
 - Warm black ground in three steps; panels are one surface split by 1px seams (`.panels`); nothing round, no shadow, glow or gradient.
 - Every picture sits in a `.frame` on `--color-paper-3` and shows in true colour: the owner's photographs, the screenshots and the certificates. Rim's `sat=-20 con=10` photo treatment is not applied, at the owner's request.
 
+## Phones (40rem and under)
+- The hero shows the portrait first (a 4:3 crop, visual order only), then the name and the lines.
+- Projects are compact rows: a 5rem square thumbnail beside the title and description, the rest full width under them.
+- Section gaps 48 / 56 / 72px.
+
 ## Motion
 - Character: still. Only filter and lightbox opacity at `--dur-short`, inside `prefers-reduced-motion: no-preference`; no reveals, parallax or hover lifts.
 
