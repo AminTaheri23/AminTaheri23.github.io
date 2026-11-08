@@ -17,19 +17,19 @@ fi
 
 # Convert images in portfolio
 echo "Converting portfolio images..."
-for img in img/portfolio/*.{jpg,jpg,png,JPG,PNG}; do
+for img in static/img/portfolio/*.{jpg,jpg,png,JPG,PNG}; do
     [ -f "$img" ] || continue
     filename=$(basename "$img")
     name="${filename%.*}"
-    if [ ! -f "img/portfolio/${name}.webp" ]; then
+    if [ ! -f "static/img/portfolio/${name}.webp" ]; then
         echo "Converting $img to ${name}.webp"
-        cwebp -q 80 "$img" -o "img/portfolio/${name}.webp"
+        cwebp -q 80 "$img" -o "static/img/portfolio/${name}.webp"
     fi
 done
 
 # Convert images in gallery
 echo "Converting gallery images..."
-find img/Gallery -type f \( -name "*.jpg" -o -name "*.jpg" -o -name "*.png" -o -name "*.PNG" \) | while read img; do
+find static/img/Gallery -type f \( -name "*.jpg" -o -name "*.jpg" -o -name "*.png" -o -name "*.PNG" \) | while read img; do
     filename=$(basename "$img")
     name="${filename%.*}"
     dir=$(dirname "$img")
@@ -41,7 +41,7 @@ done
 
 # Convert images in certificates
 echo "Converting certificate images..."
-find img/Certificates_images -type f \( -name "*.jpg" -o -name "*.jpg" -o -name "*.png" -o -name "*.PNG" \) | while read img; do
+find static/img/Certificates_images -type f \( -name "*.jpg" -o -name "*.jpg" -o -name "*.png" -o -name "*.PNG" \) | while read img; do
     filename=$(basename "$img")
     name="${filename%.*}"
     dir=$(dirname "$img")
