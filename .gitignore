@@ -10,3 +10,6 @@ vendor/bundle/
 *.swo
 *~
 _vendor/bundle/
+# Zola
+public/
+static/processed_images/
