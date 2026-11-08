@@ -9,12 +9,16 @@
 /* Hallmark · reworded "Look at the shinny MVP" to "Look at the shiny MVP" · spelling fix in a Rahhat photo description */
 /* Hallmark · reworded "Did you saw those cute I and Es?" to "Did you see those cute I and Es?" · tense fix in an IEEE photo description */
 /* Hallmark · reworded "Azad University Centeral Tehran Branch" to "Azad University Central Tehran Branch" · spelling fix in both glossaries */
+/* Hallmark · reworded "Are interested in my work?" to "Are you interested in my work?" · missing word in the contact paragraph, fixed at the owner's request */
+/* Hallmark · reworded "Natural Language Processing and Computer vision" to "Natural Language Processing and Computer Vision" · capitalisation in the biography, at the owner's request */
+/* Hallmark · reworded "Python, Tensorflow, Keras" to "Python, TensorFlow, Keras", "Python - Tensorflow - Keras" to "Python - TensorFlow - Keras" · the library's official name, in the hero and two project tech stacks */
+/* Hallmark · reworded "Select a Category" to "Select a category" · one sentence-case filter label on every page, at the owner's request */
 /* Hallmark · reworded "DL_C4 _small.jpg" to "DL_C4%20_small.jpg", "DL_C5 _small.jpg" to "DL_C5%20_small.jpg", "certificate_8 _small.jpg" to "certificate_8%20_small.jpg" · the same certificate files, their spaces now URL-encoded in the img src */
 /* Hallmark · dropped the link emoji icon on project cards · Floor 11 bans an emoji as an icon; the screenshot itself is the link */
 /* Hallmark · dropped the category-key hover overlay Cv/Nlp/Strucdata/Etc · replaced by the human category labels listed on every project card */
 /* Hallmark · dropped _includes/services.html · the include was never rendered on any page of the old site */
 /* Hallmark · dropped /BacTermFinder.html · removed at the owner's request; it was never linked from any page */
-/* Hallmark · dropped img/header.jpg hero background · the Stage hero leads with the owner's portrait; the file still ships at its old URL */
+/* Hallmark · dropped img/header.jpg hero background · removed at the owner's request; the Stage hero leads with the portrait */
 /* Hallmark · dropped /index.html, /gallery.html, /cert_gal.html · relinked to the Zola routes /, /gallery/ and /certificates/; the old .html URLs stay as redirect pages that keep the hash */
 /* Hallmark · relinked gallery.html to /gallery/ · Zola alias page, JS location.replace keeping the hash plus a noscript meta refresh */
 /* Hallmark · relinked cert_gal.html to /certificates/ · Zola alias page, JS location.replace keeping the hash plus a noscript meta refresh */

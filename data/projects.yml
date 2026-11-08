@@ -50,7 +50,7 @@
   alt: "Churn Customers Prediction"
   description: "Predicting whether a customer leave business or not"
   github: "https://github.com/amintaheri23/Churn-Customers-Prediction"
-  tech_stack: "Python - Tensorflow - Keras"
+  tech_stack: "Python - TensorFlow - Keras"
 
 - title: "Personal Website"
   category: ["all", "website"]
@@ -77,7 +77,7 @@
   alt: "cs230 notes"
   description: "My notes when auditing Andrew Ng's and Kian Katan Course"
   github: "https://github.com/amintaheri23/DeepLearnig-Notes-AndrewNg-Course"
-  tech_stack: "Python - Tensorflow - Keras - Markdown"
+  tech_stack: "Python - TensorFlow - Keras - Markdown"
 
 - title: "Persian NER with Deep Learning"
   category: ["all", "nlp"]
