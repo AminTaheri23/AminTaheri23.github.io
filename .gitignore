@@ -1,15 +1,9 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-*.gem
-Gemfile.lock
-.bundle/
-node_modules/
-vendor/bundle/
-*.swp
-*.swo
-*~
-_vendor/bundle/
 # Zola
 public/
 static/processed_images/
+
+# Editors and tools
+node_modules/
+*.swp
+*.swo
+*~
