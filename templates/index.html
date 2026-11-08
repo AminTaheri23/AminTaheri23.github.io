@@ -1,3 +1,31 @@
 {% extends "base.html" %}
-{# Stub from A1; W1 replaces this file. #}
-{% block content %}{% endblock content %}
+{% block title %}Amin Taheri{% endblock title %}
+{% block head_extra %}<link rel="stylesheet" href="{{ get_url(path='css/home.css') }}">{% endblock head_extra %}
+{% block content %}
+{%- set portrait_sm = resize_image(path="img/latest.jpg", width=640, op="fit_width", format="webp", quality=78) -%}
+{%- set portrait_lg = resize_image(path="img/latest.jpg", width=1280, op="fit_width", format="webp", quality=78) -%}
+{%- set portrait_jpg = resize_image(path="img/latest.jpg", width=1280, op="fit_width", format="jpg", quality=80) -%}
+<header class="hero" aria-labelledby="hero-name">
+  <div class="container hero__inner">
+    <div class="hero__text">
+      <h1 class="hero__name" id="hero-name">Amin Taheri</h1>
+      <p class="hero__copy"><span class="hero__lead">MSc in Computer Science @ MUN</span>
+        <span class="hero__line">Bioinformatics &amp; Natural Language Processing &amp; Computer Vision</span>
+        <span class="hero__line">Python, Tensorflow, Keras</span></p>
+      <div class="btn-row hero__actions">
+        <a class="btn btn--primary" href="#about">More</a>
+        <a class="btn" href="https://amintaheri23.github.io/blog" target="_blank" rel="noopener">Blog (En)</a>
+        <a class="btn" href="https://virgool.io/@amintaheri90/" target="_blank" rel="noopener">Blog (Fa)</a>
+        <a class="btn" href="{{ get_url(path='@/certificates.md') }}">Certificates</a>
+      </div>
+      {{ <social_links class="hero__social" /> }}
+    </div>
+    <div class="hero__portrait frame duotone">
+      <picture>
+        <source type="image/webp" srcset="{{ portrait_sm.url }} {{ portrait_sm.width }}w, {{ portrait_lg.url }} {{ portrait_lg.width }}w" sizes="(min-width: 60rem) 40rem, min(100vw, 28rem)">
+        <img src="{{ portrait_jpg.url }}" alt="Amin Taheri" width="{{ portrait_jpg.width }}" height="{{ portrait_jpg.height }}" loading="eager" decoding="async" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
+</header>
+{% endblock content %}

@@ -1,0 +1,70 @@
+/* Home page layout. Loaded after tokens.css, base.css and site.css; shared components (.btn, .social, .duotone, .frame) are styled in site.css. */
+
+/* ---------- Hero: Stage, reversed (the name on 7 columns, the portrait on 5) ---------- */
+.hero {
+  display: grid;
+  align-items: center;
+  min-height: calc(100svh - var(--nav-h));
+  /* The space under the content runs a little larger than the space above it (layout 44a). */
+  padding-block: var(--space-xl) var(--space-2xl);
+}
+
+.hero__inner {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.hero__text { display: grid; justify-items: start; min-width: 0; }
+
+/* Marquee scale, clamp(4rem, 10vw, 9rem) per the picks, but never wider than the 7-column text track:
+   the name is about 5.1em wide on one line, so the size is held to that track's width (container units, no vw). */
+.hero__name {
+  --name-track: calc((100cqi - var(--space-2xl)) * 7 / 12);
+  max-width: none;
+  font-size: clamp(4rem, var(--name-track) / 5.2, 9rem);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--tracking-display);
+  line-height: 1;
+  color: var(--color-ink);
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.hero__copy { display: grid; gap: var(--space-2xs); max-width: 52ch; margin-top: var(--space-lg); color: var(--color-muted); }
+.hero__lead, .hero__line { display: block; }
+.hero__lead { margin-bottom: var(--space-2xs); font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
+
+.hero__actions { margin-top: var(--space-xl); }
+
+/* The icon row starts on the text edge: each link is 44px with a 20px glyph, so pull it back by the glyph's inset. */
+.hero__social { margin-top: var(--space-lg); margin-left: calc(var(--space-sm) * -1); }
+
+/* The portrait: a tall crop of the square headshot, black and white, 10px with a 1px rule edge. */
+.hero__portrait {
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  max-height: calc((100svh - var(--nav-h)) * 0.75);
+  justify-self: end;
+}
+.hero__portrait picture { height: 100%; }
+.hero__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+
+@media (min-width: 60.0625rem) {
+  .hero__name { white-space: nowrap; }
+}
+
+/* ---------- Tablet and phone: one column, text first, portrait beneath ---------- */
+@media (max-width: 60rem) {
+  .hero { min-height: 0; }
+  .hero__inner { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .hero__name { font-size: clamp(4rem, 10cqi, 9rem); }
+  .hero__portrait { justify-self: start; max-width: 28rem; max-height: none; aspect-ratio: 1 / 1; }
+}
+
+@media (max-width: 40rem) {
+  .hero__copy { margin-top: var(--space-md); }
+  .hero__actions { margin-top: var(--space-lg); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
