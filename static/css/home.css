@@ -133,7 +133,7 @@
 .project-grid > .project { outline: var(--rule-hair) solid var(--color-rule); }
 .project { display: flex; flex-direction: column; gap: var(--space-sm); padding: var(--space-lg); }
 
-.project__shot { display: block; aspect-ratio: 16 / 10; margin-bottom: var(--space-xs); background: var(--color-paper-3); transition: outline-color var(--dur-short) var(--ease-out); }
+.project__shot { display: block; aspect-ratio: 16 / 10; margin-bottom: var(--space-xs); background: var(--color-paper-3); }
 .project__shot picture { height: 100%; }
 .project__img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .project__shot:hover { outline-color: var(--color-muted); }
@@ -157,4 +157,4 @@
   .project-grid { grid-template-columns: minmax(0, 1fr); }
   .project { padding: var(--space-md); }
 }
-@media (prefers-reduced-motion: reduce) { .project__shot { transition: none; } }
+

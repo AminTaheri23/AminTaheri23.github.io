@@ -1,7 +1,30 @@
-/* Hallmark · shape: Marquee Hero, from draw 674e0a · genre: modern-minimal · theme: Console (by request) · redesign: full · copy: verbatim
- * hero: Stage (/), Banner (/gallery/, /certificates/) · nav: edge-aligned · footer: letter close · imagery: photographs · signature: the name at marquee scale beside the black-and-white portrait · console: graphite
+/* Hallmark · shape: Marquee Hero, from draw 674e0a · draw: 674e0a · genre: modern-minimal · theme: Console (by request) · redesign: full · copy: verbatim
+ * hero: Stage (/), Banner (/gallery/, /certificates/) · nav: edge-aligned · footer: letter close · imagery: the owner's photographs in duotone, project screenshots and certificates in true colour · signature: the name at marquee scale beside the black-and-white portrait · console: graphite
  * axes: dark/grotesk-sans/chromatic-amber · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · pre-emit critique: P_ H_ E_ S_ R_ V_ · weakest: _, <what you did about it> */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: S, the two archive pages are a filter bar over an image grid that any portfolio could carry; kept them the owner's by setting his organisation glossary as a column beside the grid, his photos in duotone and the certificates in true colour, and left the composition plain rather than adding material the site never had */
+/* Hallmark · reworded "Netilfy" to "Netlify" · spelling fix in the MediSightAI tech stack (plan C2) */
+/* Hallmark · reworded "Predincting wheter a customer leave bussiness or not" to "Predicting whether a customer leave business or not" · spelling fix in the churn project description, grammar kept */
+/* Hallmark · reworded "Stramlit" to "Streamlit" · spelling fix in the diabetes webapp tech stack */
+/* Hallmark · reworded "IEEE Xtream 2016" to "IEEE Xtreme 2016", "IEEE Xtream" to "IEEE Xtreme", "IEEE Xtream is a 24 hour competition" to "IEEE Xtreme is a 24 hour competition" · the contest name, fixed in four photo titles and one photo description */
+/* Hallmark · reworded "Look at the shinny MVP" to "Look at the shiny MVP" · spelling fix in a Rahhat photo description */
+/* Hallmark · reworded "Did you saw those cute I and Es?" to "Did you see those cute I and Es?" · tense fix in an IEEE photo description */
+/* Hallmark · reworded "Azad University Centeral Tehran Branch" to "Azad University Central Tehran Branch" · spelling fix in both glossaries */
+/* Hallmark · reworded "DL_C4 _small.jpg" to "DL_C4%20_small.jpg", "DL_C5 _small.jpg" to "DL_C5%20_small.jpg", "certificate_8 _small.jpg" to "certificate_8%20_small.jpg" · the same certificate files, their spaces now URL-encoded in the img src */
+/* Hallmark · dropped the link emoji icon on project cards · Floor 11 bans an emoji as an icon; the screenshot itself is the link */
+/* Hallmark · dropped the category-key hover overlay Cv/Nlp/Strucdata/Etc · replaced by the human category labels listed on every project card */
+/* Hallmark · dropped _includes/services.html · the include was never rendered on any page of the old site */
+/* Hallmark · dropped /BacTermFinder.html · removed at the owner's request; it was never linked from any page */
+/* Hallmark · dropped /index.html, /gallery.html, /cert_gal.html · relinked to the Zola routes /, /gallery/ and /certificates/; the old .html URLs stay as redirect pages that keep the hash */
+/* Hallmark · relinked gallery.html to /gallery/ · Zola alias page, JS location.replace keeping the hash plus a noscript meta refresh */
+/* Hallmark · relinked cert_gal.html to /certificates/ · Zola alias page, JS location.replace keeping the hash plus a noscript meta refresh */
+/* Hallmark · relinked index.html to / · in-site Back and brand links now point at the Zola home route */
+/* Hallmark · relinked projects.html to /#projects · static page with a meta refresh, a canonical link and a plain link */
+/* Hallmark · waive 8 · kept sequence Hero, Biography, Projects, Contact in a new composition · the hero's More link targets the Biography directly under it, so the owner's order stays */
+/* Hallmark · waive 44c · Banner posture on /gallery/ and /certificates/ · the archive pages open on a compact head so the chips, glossary and first photos sit above the fold */
+/* Hallmark · waive 59 · a dense archive separated by hairline rules and the sticky chip bar · the Banner head, chip bar and grid read as one unit; a 120px gap would push the photos below the fold */
+/* Hallmark · waive 83 · a gallery of the owner's own photographs and certificates · these two pages are the photo and certificate archives the old site had, and nothing else belongs on them */
+/* Hallmark · dismissed 77 · four sections is the owner's own home (Hero, Biography, Projects, Contact) and each one has mass: the marquee portrait, the panel of research and education, the twelve-cell project index, the full-width contact close */
+/* Hallmark · note 58 · copy: verbatim; the Projects index is a dense index of the owner's own twelve projects, and the gallery captions are his own photo titles */
 
 /* Shared components only. Load order: tokens.css, base.css, site.css, then the page's own sheet.
    Page layouts (hero, about, projects grid, gallery grid) live in home.css and gallery.css. */
@@ -66,7 +89,7 @@ a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; bo
 .chips__label { max-width: none; font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0; line-height: 1.4; color: var(--color-muted); margin: 0 0 var(--space-xs); }
 .chips { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
 .chip {
-  display: inline-flex; align-items: center; min-height: 40px; padding: 0 var(--space-sm);
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-sm);
   border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-chip);
   background: var(--color-paper); color: var(--color-ink-2);
   font: 500 var(--text-sm)/1 var(--font-body); letter-spacing: 0; white-space: nowrap; cursor: pointer;
@@ -94,7 +117,8 @@ a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; bo
 /* ---------- Figures and photographs ---------- */
 figure { margin: 0; }
 figcaption { margin-top: var(--space-xs); font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); }
-figcaption strong, .caption__title { display: block; font-weight: 500; color: var(--color-ink-2); }
+figcaption strong, .caption__title { display: block; margin: 0; max-width: none; font: inherit; font-weight: 500; letter-spacing: 0; color: var(--color-ink-2); }
+.caption__desc { display: block; }
 picture { display: block; }
 /* Duotone: put .duotone on the element that wraps the <picture> (or on the <picture> itself).
    Black and white from paper-3 (the ::after lightens the shadows to it) up to about ink (brightness caps the highlights).

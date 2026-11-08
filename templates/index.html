@@ -4,7 +4,8 @@
 {% block content %}
 {%- set portrait_sm = resize_image(path="img/latest.jpg", width=640, op="fit_width", format="webp", quality=78) -%}
 {%- set portrait_lg = resize_image(path="img/latest.jpg", width=1280, op="fit_width", format="webp", quality=78) -%}
-{%- set portrait_jpg = resize_image(path="img/latest.jpg", width=1280, op="fit_width", format="jpg", quality=80) -%}
+{#- The webp sources are what browsers load; the original jpg is the fallback (and gives the box its shape). -#}
+{%- set portrait_jpg = get_image_metadata(path="img/latest.jpg") -%}
 <header class="hero" aria-labelledby="hero-name">
   <div class="container hero__inner">
     <div class="hero__text">
@@ -23,7 +24,7 @@
     <div class="hero__portrait frame duotone">
       <picture>
         <source type="image/webp" srcset="{{ portrait_sm.url }} {{ portrait_sm.width }}w, {{ portrait_lg.url }} {{ portrait_lg.width }}w" sizes="(min-width: 48rem) 40vw, 100vw">
-        <img src="{{ portrait_jpg.url }}" alt="Amin Taheri" width="{{ portrait_jpg.width }}" height="{{ portrait_jpg.height }}" loading="eager" decoding="async" fetchpriority="high">
+        <img src="{{ get_url(path='img/latest.jpg') }}" alt="Amin Taheri" width="{{ portrait_jpg.width }}" height="{{ portrait_jpg.height }}" loading="eager" decoding="async" fetchpriority="high">
       </picture>
     </div>
   </div>

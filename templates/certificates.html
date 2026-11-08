@@ -39,7 +39,11 @@
     {%- set certs = load_data(path="data/certificates.yml") %}
     <ul class="grid gallery__grid gallery__grid--certs">
     {%- for c in certs %}
-      {%- set name = "Certificate" if c.category == "all" else c.category ~ " certificate" %}
+      {#- Alt and caption use the chip labels, not the raw keys. -#}
+      {%- if c.category == "all" %}{% set name = "Certificate" %}
+      {%- elif c.category == "IEEEsb" %}{% set name = "IEEE IAUCTB certificate" %}
+      {%- elif c.category == "IEEEir" %}{% set name = "IEEE IR certificate" %}
+      {%- else %}{% set name = c.category ~ " certificate" %}{% endif %}
       <li class="filter-item" data-categories="{{ c.category }}">
         <a class="lightbox-link cert" href="{{ get_url(path=c.image_large) | replace(from=" ", to="%20") }}" data-caption-title="{{ name }}">
           <div class="frame cert__media">{{ <picture src={c.image_thumb} alt={name} lazy={loop.index > 3} /> }}</div>

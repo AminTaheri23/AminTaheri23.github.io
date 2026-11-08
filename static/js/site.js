@@ -35,6 +35,11 @@
     scope.querySelectorAll('[data-categories]').forEach(function (el) {
       el.hidden = value !== 'all' && el.getAttribute('data-categories').split(/\s+/).indexOf(value) < 0;
     });
+    // A shorter grid can leave the viewport below it: bring the scope's top back into view.
+    if (scope.getBoundingClientRect().top < 0) {
+      var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      scope.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'start' });
+    }
   });
 
   /* ---------- Lightbox ---------- */
