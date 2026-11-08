@@ -43,7 +43,7 @@
 /* The icon row starts on the text edge: each link is 44px with a 20px glyph, so pull it back by the glyph's inset. */
 .hero__social { margin-top: var(--space-lg); margin-left: calc(var(--space-sm) * -1); }
 
-/* The portrait: a tall crop of the square headshot, in true colour, 10px with a 1px rule edge. */
+/* The portrait: a tall crop of the square headshot, in true colour, with a 1px rule edge. */
 .hero__portrait {
   width: 100%;
   aspect-ratio: 5 / 6;
@@ -104,14 +104,14 @@
 /* Research Interest: the short list, set large, rows parted by hairlines. */
 .interests { margin: 0; padding: 0; list-style: none; }
 .interests li { padding-block: var(--space-sm); font-size: var(--text-xl); line-height: 1.25; color: var(--color-ink); }
-.interests li + li { border-top: var(--rule-hair) solid var(--color-rule); }
+.interests li + li { border-top: var(--rule-hair) solid var(--color-rule-2); }
 
-/* Education: the Console trail, rows on a 1px rule-2 spine; the first node (MUN, the current MSc) in amber. */
+/* Education: the trail, rows on a 1px rule spine with square nodes (Rim: nothing round); the first node (MUN, the current MSc) in the orange accent. */
 .trail { position: relative; margin: 0; padding: 0 0 0 var(--space-xl); list-style: none; }
-.trail::before { content: ""; position: absolute; left: 5px; top: calc(var(--space-sm) + 0.7em); bottom: calc(var(--space-sm) + 0.7em); border-left: var(--rule-hair) solid var(--color-rule-2); }
+.trail::before { content: ""; position: absolute; left: 5px; top: calc(var(--space-sm) + 0.7em); bottom: calc(var(--space-sm) + 0.7em); border-left: var(--rule-hair) solid var(--color-rule); }
 .trail__row { position: relative; padding-block: var(--space-sm); font-size: var(--text-lg); line-height: 1.4; color: var(--color-ink-2); }
-.trail__row + .trail__row { border-top: var(--rule-hair) solid var(--color-rule); }
-.trail__row::before { content: ""; position: absolute; left: calc(var(--space-xl) * -1); top: calc(var(--space-sm) + 0.7em - 5.5px); width: 11px; height: 11px; border-radius: 50%; border: var(--rule-hair) solid var(--color-rule-2); background: var(--color-paper-2); }
+.trail__row + .trail__row { border-top: var(--rule-hair) solid var(--color-rule-2); }
+.trail__row::before { content: ""; position: absolute; left: calc(var(--space-xl) * -1); top: calc(var(--space-sm) + 0.7em - 5.5px); width: 11px; height: 11px; border-radius: 0; border: var(--rule-hair) solid var(--color-rule); background: var(--color-paper-2); }
 .trail__row:first-child { color: var(--color-ink); }
 .trail__row:first-child::before { background: var(--color-accent); border-color: var(--color-accent); }
 

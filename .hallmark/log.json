@@ -1,6 +1,28 @@
 [
  {
   "mode": "redesign",
+  "depth": "restyle",
+  "scope": "site",
+  "shape": "Marquee Hero",
+  "theme": "rim",
+  "axes": "dark/grotesk-sans/warm",
+  "hero": "Stage (/), Banner (/gallery/, /certificates/)",
+  "nav": "edge-aligned",
+  "footer": "letter close",
+  "imagery": "the owner photographs, project screenshots and certificates in true colour",
+  "photos": [],
+  "entry": "Stage",
+  "fingerprint": "rim/marquee/stage/edge-aligned/letter-close",
+  "signature": "the name at marquee scale beside the colour portrait",
+  "prompt": "personal site of an ML and bioinformatics researcher: projects, photo and certificate archives, get in touch",
+  "draw": "674e0a",
+  "genre": "modern-minimal",
+  "copy": "verbatim",
+  "note": "restyled from Console to Rim at the owner request; new colour portrait; phone hero shows the portrait first, compact project rows, tighter phone spacing",
+  "date": "2026-11-08"
+ },
+ {
+  "mode": "redesign",
   "depth": "full",
   "scope": "site",
   "shape": "Marquee Hero",

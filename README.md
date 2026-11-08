@@ -96,8 +96,8 @@ In the repository settings, **Settings → Pages → Build and deployment → So
 
 ## Design
 
-- Built with [Hallmark](https://github.com/nutlope/hallmark), Console theme. The locked design system is [design.md](design.md).
-- Font: [Host Grotesk](https://fonts.google.com/specimen/Host+Grotesk) (Google Fonts).
+- Built with [Hallmark](https://github.com/nutlope/hallmark), Rim theme. The locked design system is [design.md](design.md).
+- Font: [Switzer](https://www.fontshare.com/fonts/switzer) (Fontshare).
 - Icons: [Font Awesome Free 6](https://fontawesome.com) ([CC BY 4.0](https://fontawesome.com/license/free)), inlined as SVG.
 
 ## License

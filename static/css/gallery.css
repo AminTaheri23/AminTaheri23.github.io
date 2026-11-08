@@ -47,7 +47,7 @@
   .gallery__glossary[open] > summary { margin-bottom: var(--space-xs); }
   .gallery__glossary > summary::after { content: "+"; font-size: var(--text-lg); line-height: 1; color: var(--color-muted); }
   .gallery__glossary[open] > summary::after { content: "\2212"; }
-  .gallery__glossary > summary:hover .label-head { text-decoration: underline; text-decoration-color: var(--color-rule-2); }
+  .gallery__glossary > summary:hover .label-head { text-decoration: underline; text-decoration-color: var(--color-muted-2); }
 }
 .gallery__aside:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .gallery__aside .glossary { grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: var(--space-xs) var(--space-lg); }
@@ -64,7 +64,7 @@
 }
 /* Pinned beside the grid at every height; on a short screen it scrolls inside itself (site.js makes it a tab stop when it overflows). */
 @media (min-width: 64rem) {
-  .gallery__aside { position: sticky; top: calc(var(--nav-h) + var(--gallery-bar-h) + var(--space-lg)); max-height: calc(100svh - var(--nav-h) - var(--gallery-bar-h) - 2 * var(--space-lg)); overflow: auto; overscroll-behavior: contain; scrollbar-color: var(--color-rule-2) transparent; }
+  .gallery__aside { position: sticky; top: calc(var(--nav-h) + var(--gallery-bar-h) + var(--space-lg)); max-height: calc(100svh - var(--nav-h) - var(--gallery-bar-h) - 2 * var(--space-lg)); overflow: auto; overscroll-behavior: contain; scrollbar-color: var(--color-muted-2) transparent; }
 }
 
 /* ---------- Grid ---------- */
