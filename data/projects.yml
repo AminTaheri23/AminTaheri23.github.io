@@ -5,7 +5,7 @@
   alt: "Medisightai screenshot"
   description: "MediSightAi is a startup at Genesis offering HealthTech solutions"
   github: "https://github.com/AminTaheri23/open-react-template/tree/master"
-  tech_stack: "React - Nextjs - Tailwind - Netilfy"
+  tech_stack: "React - Nextjs - Tailwind - Netlify"
 
 - title: "BacTermFinder"
   category: ["all", "etc"]
@@ -48,7 +48,7 @@
   link: "https://github.com/amintaheri23/Churn-Customers-Prediction"
   image: "img/portfolio/Churn_Blog.png"
   alt: "Churn Customers Prediction"
-  description: "Predincting wheter a customer leave bussiness or not"
+  description: "Predicting whether a customer leave business or not"
   github: "https://github.com/amintaheri23/Churn-Customers-Prediction"
   tech_stack: "Python - Tensorflow - Keras"
 
@@ -104,4 +104,4 @@
   alt: "diabetes detection deep learning webapp"
   description: "A responsive webapp deployed on cloud, for detecting diabetes from Pima Indian dataset with ML + DL"
   github: "https://github.com/amintaheri23/Pima-indian-diabetes-Deep-Learning"
-  tech_stack: "Python - Scikit Learn - Keras - Stramlit - Heroku"
+  tech_stack: "Python - Scikit Learn - Keras - Streamlit - Heroku"
