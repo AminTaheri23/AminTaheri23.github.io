@@ -34,7 +34,7 @@ Host Grotesk 500 for heads, 400 for body; mono only for measured figures, never 
 
 ## Surfaces
 - Graphite ground in three steps; panels are one surface split by 1px seams (`.panels`); no shadow, glow or gradient.
-- Photographs are duotone (`.duotone`), from `--color-paper-3` to `--color-ink`; screenshots and certificates stay in colour.
+- Every picture sits in a `.frame` on `--color-paper-3` and shows in true colour: the owner's photographs (at his request), the screenshots and the certificates.
 
 ## Motion
 - Character: still. Only filter and lightbox opacity at `--dur-short`, inside `prefers-reduced-motion: no-preference`; no reveals, parallax or hover lifts.

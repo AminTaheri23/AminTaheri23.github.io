@@ -1,4 +1,4 @@
-/* Home page layout. Loaded after tokens.css, base.css and site.css; shared components (.btn, .social, .duotone, .frame, .panels, .chips) are styled in site.css. */
+/* Home page layout. Loaded after tokens.css, base.css and site.css; shared components (.btn, .social, .frame, .panels, .chips) are styled in site.css. */
 
 /* ---------- Hero: Stage, reversed (the name on 7 columns, the portrait on 5) ---------- */
 .hero {
@@ -43,7 +43,7 @@
 /* The icon row starts on the text edge: each link is 44px with a 20px glyph, so pull it back by the glyph's inset. */
 .hero__social { margin-top: var(--space-lg); margin-left: calc(var(--space-sm) * -1); }
 
-/* The portrait: a tall crop of the square headshot, black and white, 10px with a 1px rule edge. */
+/* The portrait: a tall crop of the square headshot, in true colour, 10px with a 1px rule edge. */
 .hero__portrait {
   width: 100%;
   aspect-ratio: 5 / 6;

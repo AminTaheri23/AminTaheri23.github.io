@@ -1,7 +1,7 @@
 /* Hallmark · shape: Marquee Hero, from draw 674e0a · draw: 674e0a · genre: modern-minimal · theme: Console (by request) · redesign: full · copy: verbatim
- * hero: Stage (/), Banner (/gallery/, /certificates/) · nav: edge-aligned · footer: letter close · imagery: the owner's photographs in duotone, project screenshots and certificates in true colour · signature: the name at marquee scale beside the black-and-white portrait · console: graphite
+ * hero: Stage (/), Banner (/gallery/, /certificates/) · nav: edge-aligned · footer: letter close · imagery: the owner's photographs, project screenshots and certificates in true colour · signature: the name at marquee scale beside the colour portrait · console: graphite
  * axes: dark/grotesk-sans/chromatic-amber · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: S, the two archive pages are a filter bar over an image grid that any portfolio could carry; kept them the owner's by setting his organisation glossary as a column beside the grid, his photos in duotone and the certificates in true colour, and left the composition plain rather than adding material the site never had */
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: S, the two archive pages are a filter bar over an image grid that any portfolio could carry; kept them the owner's by setting his organisation glossary as a column beside the grid, his photos and certificates in true colour, and left the composition plain rather than adding material the site never had */
 /* Hallmark · reworded "Netilfy" to "Netlify" · spelling fix in the MediSightAI tech stack (plan C2) */
 /* Hallmark · reworded "Predincting wheter a customer leave bussiness or not" to "Predicting whether a customer leave business or not" · spelling fix in the churn project description, grammar kept */
 /* Hallmark · reworded "Stramlit" to "Streamlit" · spelling fix in the diabetes webapp tech stack */
@@ -127,13 +127,8 @@ figcaption { margin-top: var(--space-xs); font-size: var(--text-sm); line-height
 figcaption strong, .caption__title { display: block; margin: 0; max-width: none; font: inherit; font-weight: 500; letter-spacing: 0; color: var(--color-ink-2); }
 .caption__desc { display: block; }
 picture { display: block; }
-/* Duotone: put .duotone on the element that wraps the <picture> (or on the <picture> itself).
-   Black and white from paper-3 (the ::after lightens the shadows to it) up to about ink (brightness caps the highlights).
-   The ground is paper-3, so an image that has not painted yet shows as the deepest step, never as a pale block. */
-.duotone { display: block; position: relative; isolation: isolate; overflow: hidden; background: var(--color-paper-3); border-radius: inherit; }
-.duotone img { filter: grayscale(1) contrast(1) brightness(0.94); }
-.duotone::after { content: ""; position: absolute; inset: 0; z-index: 1; background: var(--color-paper-3); mix-blend-mode: lighten; pointer-events: none; }
-.frame { border-radius: var(--radius-card); outline: var(--rule-hair) solid var(--color-rule-2); outline-offset: -1px; overflow: hidden; }
+/* Every picture sits in a .frame: true colour on a paper-3 ground, so an image that has not painted yet (or a letterboxed one) shows the deepest step. */
+.frame { display: block; background: var(--color-paper-3); border-radius: var(--radius-card); outline: var(--rule-hair) solid var(--color-rule-2); outline-offset: -1px; overflow: hidden; }
 
 /* ---------- Social links ---------- */
 .social { display: flex; flex-wrap: wrap; gap: var(--space-2xs); margin: 0; padding: 0; list-style: none; }

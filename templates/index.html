@@ -21,7 +21,7 @@
       </div>
       {{ <social_links class="hero__social" /> }}
     </div>
-    <div class="hero__portrait frame duotone">
+    <div class="hero__portrait frame">
       <picture>
         <source type="image/webp" srcset="{{ portrait_sm.url }} {{ portrait_sm.width }}w, {{ portrait_lg.url }} {{ portrait_lg.width }}w" sizes="(min-width: 48rem) 40vw, 100vw">
         <img src="{{ get_url(path='img/latest.jpg') }}" alt="Amin Taheri" width="{{ portrait_jpg.width }}" height="{{ portrait_jpg.height }}" loading="eager" decoding="async" fetchpriority="high">

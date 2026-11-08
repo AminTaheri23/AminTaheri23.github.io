@@ -1,5 +1,5 @@
 /* Gallery pages (/gallery/, /certificates/): Banner page head, sticky chip bar, glossary column, image grid.
-   Loads after tokens.css, base.css, site.css. Shared classes (.chips, .chip, .glossary, .duotone, .frame, figcaption, .btn) are styled in site.css;
+   Loads after tokens.css, base.css, site.css. Shared classes (.chips, .chip, .glossary, .frame, figcaption, .btn) are styled in site.css;
    this sheet only places them. */
 
 .gallery { --gallery-bar-h: 4.25rem; }
@@ -76,7 +76,7 @@
 .gallery__grid--certs { row-gap: var(--space-lg); }
 .filter-item { min-width: 0; }
 
-/* Photos: duotone, 16:10 like every source, caption beneath. The hover edge changes instantly: the frame is drawn with outline, so it is never transitioned (the focus ring must not fade in). */
+/* Photos: true colour, 16:10 like every source, caption beneath. The hover edge changes instantly: the frame is drawn with outline, so it is never transitioned (the focus ring must not fade in). */
 .shot__link { display: block; border-radius: var(--radius-card); text-decoration: none; }
 .shot__media { aspect-ratio: 16 / 10; }
 .shot__media picture { height: 100%; }
