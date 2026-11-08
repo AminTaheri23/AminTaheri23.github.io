@@ -1,4 +1,4 @@
-/* Home page layout. Loaded after tokens.css, base.css and site.css; shared components (.btn, .social, .duotone, .frame) are styled in site.css. */
+/* Home page layout. Loaded after tokens.css, base.css and site.css; shared components (.btn, .social, .duotone, .frame, .panels, .chips) are styled in site.css. */
 
 /* ---------- Hero: Stage, reversed (the name on 7 columns, the portrait on 5) ---------- */
 .hero {
@@ -10,19 +10,20 @@
 }
 
 .hero__inner {
+  --hero-gap: var(--space-2xl);
   container-type: inline-size;
   display: grid;
   grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-  gap: var(--space-2xl);
+  gap: var(--hero-gap);
   align-items: center;
 }
 
 .hero__text { display: grid; justify-items: start; min-width: 0; }
 
-/* Marquee scale, clamp(4rem, 10vw, 9rem) per the picks, but never wider than the 7-column text track:
-   the name is about 5.1em wide on one line, so the size is held to that track's width (container units, no vw). */
+/* Marquee scale, clamp(4rem, 10vw, 9rem) per the picks, held to the 7-column text track
+   (container units, no vw): on one line the name is about 5.1em wide. */
 .hero__name {
-  --name-track: calc((100cqi - var(--space-2xl)) * 7 / 12);
+  --name-track: calc((100cqi - var(--hero-gap)) * 7 / 12);
   max-width: none;
   font-size: clamp(4rem, var(--name-track) / 5.2, 9rem);
   font-weight: var(--display-weight);
@@ -46,7 +47,7 @@
 .hero__portrait {
   width: 100%;
   aspect-ratio: 5 / 6;
-  max-height: calc((100svh - var(--nav-h)) * 0.75);
+  max-height: calc((100svh - var(--nav-h)) * 0.7);
   justify-self: end;
 }
 .hero__portrait picture { height: 100%; }
@@ -56,15 +57,104 @@
   .hero__name { white-space: nowrap; }
 }
 
-/* ---------- Tablet and phone: one column, text first, portrait beneath ---------- */
+/* Tablet: the two tracks hold; the name breaks to two lines ("Amin / Taheri") sized to its track. */
 @media (max-width: 60rem) {
-  .hero { min-height: 0; }
-  .hero__inner { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+  .hero { min-height: 0; padding-block: var(--space-2xl); }
+  .hero__inner { --hero-gap: var(--space-xl); }
+  .hero__name { font-size: clamp(4rem, var(--name-track) / 3.1, 9rem); }
+  .hero__portrait { aspect-ratio: 3 / 4; max-height: none; }
+  /* Nine icons on one row: equal cells across the text track, never an orphan. */
+  .hero__social { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); justify-self: stretch; margin-inline: calc(var(--space-sm) * -1) 0; }
+  .hero__social .social__link { width: 100%; }
+}
+
+/* Phone and small tablet: one column, text first, the portrait across the container beneath. */
+@media (max-width: 47.99rem) {
+  .hero { padding-block: var(--space-xl) var(--space-2xl); }
+  .hero__inner { grid-template-columns: minmax(0, 1fr); }
   .hero__name { font-size: clamp(4rem, 10cqi, 9rem); }
-  .hero__portrait { justify-self: start; max-width: 28rem; max-height: none; aspect-ratio: 1 / 1; }
+  .hero__portrait { justify-self: stretch; aspect-ratio: 1 / 1; }
 }
 
 @media (max-width: 40rem) {
   .hero__copy { margin-top: var(--space-md); }
   .hero__actions { margin-top: var(--space-lg); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero__social { margin-inline: 0; }
 }
+
+/* ---------- Biography: the head beside the prose, then one panel cut in two ---------- */
+.about__inner {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap-columns);
+  row-gap: var(--space-2xl);
+  align-items: start;
+}
+.about__head { grid-column: 1 / span 4; }
+.about__prose { grid-column: 5 / -1; display: grid; gap: var(--space-md); color: var(--color-muted); }
+.about__prose p { max-width: 66ch; }
+.about__lead { font-size: var(--text-lead); line-height: 1.5; color: var(--color-ink-2); }
+.about__prose .about__lead { max-width: 62ch; }
+
+.about__panels { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+.about__cell { padding: var(--space-xl); }
+.about__cell-head { margin-bottom: var(--space-md); }
+
+/* Research Interest: the short list, set large, rows parted by hairlines. */
+.interests { margin: 0; padding: 0; list-style: none; }
+.interests li { padding-block: var(--space-sm); font-size: var(--text-xl); line-height: 1.25; color: var(--color-ink); }
+.interests li + li { border-top: var(--rule-hair) solid var(--color-rule); }
+
+/* Education: the Console trail, rows on a 1px rule-2 spine; the first node (MUN, the current MSc) in amber. */
+.trail { position: relative; margin: 0; padding: 0 0 0 var(--space-xl); list-style: none; }
+.trail::before { content: ""; position: absolute; left: 5px; top: calc(var(--space-sm) + 0.7em); bottom: calc(var(--space-sm) + 0.7em); border-left: var(--rule-hair) solid var(--color-rule-2); }
+.trail__row { position: relative; padding-block: var(--space-sm); font-size: var(--text-lg); line-height: 1.4; color: var(--color-ink-2); }
+.trail__row + .trail__row { border-top: var(--rule-hair) solid var(--color-rule); }
+.trail__row::before { content: ""; position: absolute; left: calc(var(--space-xl) * -1); top: calc(var(--space-sm) + 0.7em - 5.5px); width: 11px; height: 11px; border-radius: 50%; border: var(--rule-hair) solid var(--color-rule-2); background: var(--color-paper-2); }
+.trail__row:first-child { color: var(--color-ink); }
+.trail__row:first-child::before { background: var(--color-accent); border-color: var(--color-accent); }
+
+@media (max-width: 60rem) {
+  .about__head, .about__prose { grid-column: 1 / -1; }
+  .about__inner { row-gap: var(--space-xl); }
+}
+@media (max-width: 40rem) {
+  .about__panels { grid-template-columns: minmax(0, 1fr); }
+  .about__cell { padding: var(--space-lg); }
+  .interests li { font-size: var(--text-lg); }
+  .trail__row { font-size: var(--text-md); }
+}
+
+/* ---------- Projects: the Index on the page's one band ---------- */
+.projects__head { display: grid; gap: var(--space-xl); margin-bottom: var(--space-xl); }
+
+/* One surface, 1px seams. Each cell draws its own seam so a filtered, half-empty last row reads as an empty cell, not a grey block. */
+.project-grid { margin: 0; padding: 0; list-style: none; grid-template-columns: repeat(3, minmax(0, 1fr)); background: var(--color-paper-2); }
+.project-grid > .project { outline: var(--rule-hair) solid var(--color-rule); }
+.project { display: flex; flex-direction: column; gap: var(--space-sm); padding: var(--space-lg); }
+
+.project__shot { display: block; aspect-ratio: 16 / 10; margin-bottom: var(--space-xs); background: var(--color-paper-3); transition: outline-color var(--dur-short) var(--ease-out); }
+.project__shot picture { height: 100%; }
+.project__img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.project__shot:hover { outline-color: var(--color-muted); }
+.project__shot:active { outline-color: var(--color-ink-2); }
+/* The ring follows the frame's 10px corner (the global link ring is 2px) and appears instantly. */
+.project__shot:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; border-radius: var(--radius-card); transition: none; }
+
+.project__title { max-width: none; }
+.project__desc { color: var(--color-ink-2); }
+.project__cats { display: flex; flex-wrap: wrap; margin: var(--space-xs) 0 0; padding: 0; list-style: none; font-size: var(--text-sm); font-weight: 500; line-height: 1.4; color: var(--color-muted); }
+.project__cats li + li::before { content: ",\00a0"; }
+.project__stack { font-size: var(--text-sm); font-weight: 500; line-height: 1.4; color: var(--color-ink-2); }
+.project__star { margin-top: auto; padding-top: var(--space-xs); min-height: 28px; }
+/* Without the buttons script the star stays a plain link. */
+.project__star .github-button { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--text-sm); font-weight: 500; }
+
+@media (max-width: 60rem) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 40rem) {
+  .project-grid { grid-template-columns: minmax(0, 1fr); }
+  .project { padding: var(--space-md); }
+}
+@media (prefers-reduced-motion: reduce) { .project__shot { transition: none; } }

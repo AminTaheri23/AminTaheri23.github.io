@@ -33,7 +33,7 @@ a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; bo
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
 .section { padding-block: var(--section-gap-s); }
 .section + .section { border-top: var(--rule-hair) solid var(--color-rule); }
-.band { background: var(--color-paper-3); }
+.band { background: var(--color-paper-3); color: var(--color-ink); }
 .section-head { display: grid; gap: var(--space-sm); margin-bottom: var(--space-xl); }
 .section-head > p { color: var(--color-ink-2); }
 .muted { color: var(--color-muted); }
@@ -55,7 +55,8 @@ a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; bo
 .btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
 .btn[aria-busy="true"] { cursor: progress; }
 .btn--primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
-.btn--primary:hover { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-accent-ink); }
+.btn--primary:hover { background: color-mix(in oklab, var(--color-accent) 85%, var(--color-ink)); border-color: color-mix(in oklab, var(--color-accent) 85%, var(--color-ink)); color: var(--color-accent-ink); }
+.btn--primary:active { background: color-mix(in oklab, var(--color-accent) 88%, var(--color-accent-ink)); border-color: color-mix(in oklab, var(--color-accent) 88%, var(--color-accent-ink)); }
 .btn--quiet { background: transparent; border-color: var(--color-rule); }
 .btn--quiet:hover { background: var(--color-paper-2); border-color: var(--color-rule-2); }
 .btn-row { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
@@ -87,19 +88,21 @@ a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; bo
 .glossary dd { margin: 0; color: var(--color-muted); font-size: var(--text-sm); }
 
 /* ---------- Panels (one surface, 1px seams) ---------- */
-.panels { display: grid; gap: var(--rule-hair); background: var(--color-rule); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); overflow: hidden; }
-.panels > * { background: var(--color-paper-2); min-width: 0; }
+.panels { display: grid; gap: var(--rule-hair); background: var(--color-rule); color: var(--color-ink); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); overflow: hidden; }
+.panels > * { background: var(--color-paper-2); color: var(--color-ink); min-width: 0; }
 
 /* ---------- Figures and photographs ---------- */
 figure { margin: 0; }
 figcaption { margin-top: var(--space-xs); font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); }
 figcaption strong, .caption__title { display: block; font-weight: 500; color: var(--color-ink-2); }
 picture { display: block; }
-/* Duotone: put .duotone on the element that wraps the <picture> (or on the <picture> itself). */
-.duotone { display: block; position: relative; isolation: isolate; overflow: hidden; background: var(--color-ink); border-radius: inherit; }
-.duotone img { filter: grayscale(1) contrast(1.08); mix-blend-mode: multiply; }
+/* Duotone: put .duotone on the element that wraps the <picture> (or on the <picture> itself).
+   Black and white from paper-3 (the ::after lightens the shadows to it) up to about ink (brightness caps the highlights).
+   The ground is paper-3, so an image that has not painted yet shows as the deepest step, never as a pale block. */
+.duotone { display: block; position: relative; isolation: isolate; overflow: hidden; background: var(--color-paper-3); border-radius: inherit; }
+.duotone img { filter: grayscale(1) contrast(1) brightness(0.94); }
 .duotone::after { content: ""; position: absolute; inset: 0; z-index: 1; background: var(--color-paper-3); mix-blend-mode: lighten; pointer-events: none; }
-.frame { border-radius: var(--radius-card); outline: var(--rule-hair) solid var(--color-rule); outline-offset: -1px; overflow: hidden; }
+.frame { border-radius: var(--radius-card); outline: var(--rule-hair) solid var(--color-rule-2); outline-offset: -1px; overflow: hidden; }
 
 /* ---------- Social links ---------- */
 .social { display: flex; flex-wrap: wrap; gap: var(--space-2xs); margin: 0; padding: 0; list-style: none; }
