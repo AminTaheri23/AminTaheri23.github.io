@@ -46,7 +46,7 @@
       <li class="filter-item" data-categories="{{ photo.category }}">
         <figure class="shot">
           <a class="lightbox-link shot__link" href="{{ get_url(path=photo.image) }}" data-caption-title="{{ photo.title }}" data-caption-desc="{{ photo.description }}">
-            <div class="duotone frame shot__media"><picture><source type="image/webp" srcset="{{ thumb.url }}"><img src="{{ get_url(path=photo.image) | replace(from=" ", to="%20") }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ photo.title }}: {{ photo.description }}" loading="{{ "eager" if loop.index <= 3 else "lazy" }}" decoding="async"></picture></div>
+            <div class="duotone frame shot__media{% if thumb.height > thumb.width %} shot__media--portrait{% endif %}"><picture><source type="image/webp" srcset="{{ thumb.url }}"><img src="{{ get_url(path=photo.image) | replace(from=" ", to="%20") }}" width="{{ thumb.width }}" height="{{ thumb.height }}" alt="{{ photo.title }}: {{ photo.description }}" loading="{{ "eager" if loop.index <= 3 else "lazy" }}" decoding="async"></picture></div>
           </a>
           <figcaption><h4 class="caption__title">{{ photo.title }}</h4> <span class="caption__desc">{{ photo.description }}</span></figcaption>
         </figure>

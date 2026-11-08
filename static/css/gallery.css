@@ -81,6 +81,8 @@
 .shot__media { aspect-ratio: 16 / 10; }
 .shot__media picture { height: 100%; }
 .shot__media img { width: 100%; height: 100%; object-fit: cover; }
+/* A portrait photo in the 16:10 grid is shown whole, letterboxed on the frame's paper-3 ground. */
+.shot__media--portrait img { object-fit: contain; }
 .shot__link:hover .shot__media { outline-color: var(--color-muted); }
 .shot figcaption { overflow-wrap: break-word; }
 
