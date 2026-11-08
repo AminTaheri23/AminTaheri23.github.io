@@ -1,0 +1,80 @@
+{#- Shared Tera 2 components (Zola 0.23). Components are global: no import needed.
+    Call them as {{ <picture src="img/x.png" alt="…" /> }}; non-string args go in braces: lazy={false}.
+    Icons: Font Awesome Free 6, CC BY 4.0 (https://fontawesome.com/license/free). Path data copied from @fortawesome/fontawesome-free 6.7.2. -#}
+
+{% component icon(name: string, class: string = "") -%}
+{%- if name == "envelope" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 512 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z"/></svg>
+{%- elif name == "linkedin" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 448 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+{%- elif name == "twitter" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 512 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+{%- elif name == "github" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 496 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+{%- elif name == "stack-overflow" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 384 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"/></svg>
+{%- elif name == "telegram" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 496 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg>
+{%- elif name == "instagram" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 448 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+{%- elif name == "facebook" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 320 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+{%- elif name == "medium" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 640 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M180.5,74.262C80.813,74.262,0,155.633,0,256S80.819,437.738,180.5,437.738,361,356.373,361,256,280.191,74.262,180.5,74.262Zm288.25,10.646c-49.845,0-90.245,76.619-90.245,171.095s40.406,171.1,90.251,171.1,90.251-76.619,90.251-171.1H559C559,161.5,518.6,84.908,468.752,84.908Zm139.506,17.821c-17.526,0-31.735,68.628-31.735,153.274s14.2,153.274,31.735,153.274S640,340.631,640,256C640,171.351,625.785,102.729,608.258,102.729Z"/></svg>
+{%- elif name == "close" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 384 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+{%- elif name == "prev" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 320 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+{%- elif name == "next" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 320 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
+{%- elif name == "external" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 512 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
+{%- elif name == "menu" -%}
+<svg class="icon{% if class %} {{ class }}{% endif %}" viewBox="0 0 448 512" width="20" height="20" aria-hidden="true" focusable="false" fill="currentColor"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+{%- endif -%}
+{%- endcomponent icon %}
+
+{#- picture: src is site-relative as stored in data/*.yml (e.g. "img/portfolio/esg.png").
+    Every image has a .webp sibling. width/height come from get_image_metadata unless given. -#}
+{% component picture(src: string, alt: string, class: string = "", picture_class: string = "", lazy: bool = true, priority: bool = false, sizes: string = "", width: integer = 0, height: integer = 0) -%}
+{%- set webp = src | replace(from=".png", to=".webp") | replace(from=".jpeg", to=".webp") | replace(from=".jpg", to=".webp") -%}
+{%- set md = get_image_metadata(path=src, allow_missing=true) -%}
+{%- set w = width if width > 0 else (md.width if md else 0) -%}
+{%- set h = height if height > 0 else (md.height if md else 0) -%}
+<picture{% if picture_class %} class="{{ picture_class }}"{% endif %}><source type="image/webp" srcset="{{ get_url(path=webp) | replace(from=" ", to="%20") }}"{% if sizes %} sizes="{{ sizes }}"{% endif %}><img src="{{ get_url(path=src) | replace(from=" ", to="%20") }}" alt="{{ alt }}" loading="{{ "lazy" if lazy else "eager" }}" decoding="async"{% if priority %} fetchpriority="high"{% endif %}{% if w > 0 %} width="{{ w }}" height="{{ h }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}></picture>
+{%- endcomponent picture %}
+
+{#- social_links: the 9 profiles in the old header's order. @config is taken from the calling context. -#}
+{% component social_links(@config, class: string = "") -%}
+{%- set e = config.extra -%}
+<ul class="social{% if class %} {{ class }}{% endif %}">
+  <li><a class="social__link" href="mailto:{{ e.email }}" aria-label="Email">{{ <icon name="envelope" /> }}</a></li>
+  <li><a class="social__link" href="https://linkedin.com/in/{{ e.linkedin_username }}" target="_blank" rel="noopener" aria-label="LinkedIn">{{ <icon name="linkedin" /> }}</a></li>
+  <li><a class="social__link" href="https://twitter.com/{{ e.twitter_username }}" target="_blank" rel="noopener" aria-label="Twitter">{{ <icon name="twitter" /> }}</a></li>
+  <li><a class="social__link" href="https://github.com/{{ e.github_username }}" target="_blank" rel="noopener" aria-label="GitHub">{{ <icon name="github" /> }}</a></li>
+  <li><a class="social__link" href="https://stackoverflow.com/users/{{ e.stack_username }}" target="_blank" rel="noopener" aria-label="Stack Overflow">{{ <icon name="stack-overflow" /> }}</a></li>
+  <li><a class="social__link" href="https://t.me/{{ e.telegram_username }}" target="_blank" rel="noopener" aria-label="Telegram">{{ <icon name="telegram" /> }}</a></li>
+  <li><a class="social__link" href="https://instagram.com/{{ e.instagram_username }}" target="_blank" rel="noopener" aria-label="Instagram">{{ <icon name="instagram" /> }}</a></li>
+  <li><a class="social__link" href="https://facebook.com/{{ e.facebook_username }}" target="_blank" rel="noopener" aria-label="Facebook">{{ <icon name="facebook" /> }}</a></li>
+  <li><a class="social__link" href="https://medium.com/@{{ e.medium_username }}" target="_blank" rel="noopener" aria-label="Medium">{{ <icon name="medium" /> }}</a></li>
+</ul>
+{%- endcomponent social_links %}
+
+{#- chips: filters is an array of [value, label]; "all" starts pressed. Renders the C4 label + group. -#}
+{% component chips(id: string, label: string, filters) -%}
+<h3 class="chips__label" id="{{ id }}-label">{{ label }}</h3>
+<div class="chips" role="group" aria-labelledby="{{ id }}-label">
+{%- for f in filters %}
+  <button type="button" class="chip" data-filter="{{ f[0] }}" aria-pressed="{{ "true" if f[0] == "all" else "false" }}">{{ f[1] }}</button>
+{%- endfor %}
+</div>
+{%- endcomponent chips %}
+
+{#- glossary: entries is an array of [term, description, categories]. -#}
+{% component glossary(entries) -%}
+<dl class="glossary">
+{%- for g in entries %}
+  <div class="glossary__item" data-categories="{{ g[2] }}"><dt>{{ g[0] }}</dt><dd>{{ g[1] }}</dd></div>
+{%- endfor %}
+</dl>
+{%- endcomponent glossary %}

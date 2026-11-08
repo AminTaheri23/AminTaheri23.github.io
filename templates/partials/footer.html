@@ -1,0 +1,14 @@
+{%- set is_home = current_path == "/" -%}
+{%- set home = get_url(path="@/_index.md") -%}
+<footer class="footer">
+  <div class="container">
+    <p class="footer__sign">Amin Taheri</p>
+    <ul class="footer__links" aria-label="Pages">
+      <li><a href="{{ "#about" if is_home else home ~ "#about" }}">About</a></li>
+      <li><a href="{{ "#projects" if is_home else home ~ "#projects" }}">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="{{ get_url(path='@/gallery.md') }}">Photo Gallery</a></li>
+      <li><a href="{{ get_url(path='@/certificates.md') }}">Certificate Gallery</a></li>
+    </ul>
+  </div>
+</footer>

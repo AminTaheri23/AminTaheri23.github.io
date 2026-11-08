@@ -1,0 +1,26 @@
+# Zola site configuration (Zola 0.23)
+base_url = "https://amintaheri23.github.io"
+title = "Amin Taheri"
+description = "Personal Website"
+default_language = "en"
+
+compile_sass = false
+build_search_index = false
+generate_feeds = false
+minify_html = false
+
+[extra]
+author = "Amin Taheri"
+email = "amintaheri90@gmail.com"
+google_analytics = "G-0742CLEG9T"
+
+# Usernames, copied verbatim from the old _config.yml
+twitter_username = "sed_amin"
+github_username = "AminTaheri23"
+linkedin_username = "sed-amin-taheri"
+stack_username = "8495032/amin-taheri"
+telegram_username = "sed_amin_taheri"
+instagram_username = "amin_taheri/"
+facebook_username = "amin.taheri.982/"
+medium_username = "amintaheri90"
+kaggle_username = "amintaheri90"

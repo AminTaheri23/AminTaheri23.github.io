@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ config.extra.google_analytics }}');
+  </script>
+  <meta name="description" content="Personal Website">
+  <meta name="author" content="{{ config.extra.author }}">
+  <title>{% block title %}Amin Taheri{% endblock title %}</title>
+  <link rel="icon" href="{{ get_url(path='img/amin.ico') }}" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
+  <link rel="stylesheet" href="{{ get_url(path='css/tokens.css') }}">
+  <link rel="stylesheet" href="{{ get_url(path='css/base.css') }}">
+  <link rel="stylesheet" href="{{ get_url(path='css/site.css') }}">
+  {% block head_extra %}{% endblock head_extra %}
+</head>
+<body id="page-top">
+  {% include "partials/nav.html" %}
+  <main>
+    {% block content %}{% endblock content %}
+  </main>
+  {% include "partials/contact.html" %}
+  {% include "partials/footer.html" %}
+  <script src="{{ get_url(path='js/site.js') }}" defer></script>
+  {% block scripts %}{% endblock scripts %}
+</body>
+</html>
