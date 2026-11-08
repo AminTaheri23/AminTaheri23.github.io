@@ -63,6 +63,8 @@
   .hero__inner { --hero-gap: var(--space-xl); }
   .hero__name { font-size: clamp(4rem, var(--name-track) / 3.1, 9rem); }
   .hero__portrait { aspect-ratio: 3 / 4; max-height: none; }
+  /* Four actions as a 2 x 2 block, so "Certificates" never wraps alone. */
+  .hero__actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   /* Nine icons on one row: equal cells across the text track, never an orphan. */
   .hero__social { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); justify-self: stretch; margin-inline: calc(var(--space-sm) * -1) 0; }
   .hero__social .social__link { width: 100%; }
@@ -78,7 +80,7 @@
 
 @media (max-width: 40rem) {
   .hero__copy { margin-top: var(--space-md); }
-  .hero__actions { margin-top: var(--space-lg); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero__actions { margin-top: var(--space-lg); }
   .hero__social { margin-inline: 0; }
 }
 
@@ -91,14 +93,13 @@
   align-items: start;
 }
 .about__head { grid-column: 1 / span 4; }
-.about__prose { grid-column: 5 / -1; display: grid; gap: var(--space-md); color: var(--color-muted); }
-.about__prose p { max-width: 66ch; }
-.about__lead { font-size: var(--text-lead); line-height: 1.5; color: var(--color-ink-2); }
-.about__prose .about__lead { max-width: 62ch; }
+.about__prose { grid-column: 5 / -1; display: grid; gap: var(--space-md); color: var(--color-ink-2); }
+/* One voice for all three paragraphs: one size, one colour, one measure. The lede leads by order alone. */
+.about__prose p { max-width: 62ch; font-size: var(--text-lead); line-height: 1.5; color: var(--color-ink-2); }
 
 .about__panels { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
 .about__cell { padding: var(--space-xl); }
-.about__cell-head { margin-bottom: var(--space-md); }
+.about__cell-head { margin-bottom: var(--space-sm); }
 
 /* Research Interest: the short list, set large, rows parted by hairlines. */
 .interests { margin: 0; padding: 0; list-style: none; }
@@ -141,9 +142,10 @@
 /* The ring follows the frame's 10px corner (the global link ring is 2px) and appears instantly. */
 .project__shot:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; border-radius: var(--radius-card); transition: none; }
 
+.project__body { display: grid; gap: var(--space-2xs); }
 .project__title { max-width: none; }
 .project__desc { color: var(--color-ink-2); }
-.project__cats { display: flex; flex-wrap: wrap; margin: var(--space-xs) 0 0; padding: 0; list-style: none; font-size: var(--text-sm); font-weight: 500; line-height: 1.4; color: var(--color-muted); }
+.project__cats { display: flex; flex-wrap: wrap; margin: var(--space-sm) 0 0; padding: 0; list-style: none; font-size: var(--text-sm); font-weight: 500; line-height: 1.4; color: var(--color-muted); }
 .project__cats li + li::before { content: ",\00a0"; }
 .project__stack { font-size: var(--text-sm); font-weight: 500; line-height: 1.4; color: var(--color-ink-2); }
 .project__star { margin-top: auto; padding-top: var(--space-xs); min-height: 28px; }

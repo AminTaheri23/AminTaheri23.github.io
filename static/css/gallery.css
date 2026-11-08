@@ -37,7 +37,19 @@
 /* ---------- Body: glossary column beside the grid at 64rem and up ---------- */
 .gallery__body { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); padding-block: var(--space-xl) var(--section-gap-s); }
 .gallery__aside { padding: var(--space-md); background: var(--color-paper-2); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); }
-.gallery__aside-head { margin: 0 0 var(--space-sm); max-width: none; font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; line-height: 1.4; letter-spacing: 0; color: var(--color-ink); }
+/* The glossary is a <details>, open by default (no JS, and always on wider screens); site.js folds it on phones so the photos come first. */
+.gallery__glossary > summary { list-style: none; margin: 0 0 var(--space-sm); border-radius: var(--radius-chip); }
+.gallery__glossary > summary::-webkit-details-marker { display: none; }
+.gallery__glossary > summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.gallery__glossary:not([open]) > summary { margin-bottom: 0; }
+@media (max-width: 40rem) {
+  .gallery__glossary > summary { display: flex; align-items: center; justify-content: space-between; min-height: 44px; margin: calc(-1 * var(--space-xs)) 0; cursor: pointer; }
+  .gallery__glossary[open] > summary { margin-bottom: var(--space-xs); }
+  .gallery__glossary > summary::after { content: "+"; font-size: var(--text-lg); line-height: 1; color: var(--color-muted); }
+  .gallery__glossary[open] > summary::after { content: "\2212"; }
+  .gallery__glossary > summary:hover .label-head { text-decoration: underline; text-decoration-color: var(--color-rule-2); }
+}
+.gallery__aside:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .gallery__aside .glossary { grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: var(--space-xs) var(--space-lg); }
 @media (max-width: 63.99rem) {
   /* Above the grid: each entry runs as one line of term then description, to keep the grid near the top. */
@@ -50,9 +62,9 @@
   .gallery__aside { align-self: start; }
   .gallery__aside .glossary { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
 }
-/* Pinned beside the grid only where the whole glossary fits under the nav and the chip bar. */
-@media (min-width: 64rem) and (min-height: 56rem) {
-  .gallery__aside { position: sticky; top: calc(var(--nav-h) + var(--gallery-bar-h) + var(--space-lg)); }
+/* Pinned beside the grid at every height; on a short screen it scrolls inside itself (site.js makes it a tab stop when it overflows). */
+@media (min-width: 64rem) {
+  .gallery__aside { position: sticky; top: calc(var(--nav-h) + var(--gallery-bar-h) + var(--space-lg)); max-height: calc(100svh - var(--nav-h) - var(--gallery-bar-h) - 2 * var(--space-lg)); overflow: auto; overscroll-behavior: contain; scrollbar-color: var(--color-rule-2) transparent; }
 }
 
 /* ---------- Grid ---------- */

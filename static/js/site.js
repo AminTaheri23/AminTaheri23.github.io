@@ -42,6 +42,33 @@
     }
   });
 
+  /* ---------- Glossary: folded on phones, always open (and not a toggle) on wider screens ---------- */
+  var gloss = d.querySelectorAll('details.gallery__glossary');
+  if (gloss.length) {
+    var phone = window.matchMedia('(max-width: 40rem)');
+    // The pinned column scrolls inside itself on short screens: make it a tab stop only then.
+    var reach = function (g) {
+      var col = g.closest('.gallery__aside');
+      if (!col) return;
+      if (col.scrollHeight > col.clientHeight + 1) col.setAttribute('tabindex', '0'); else col.removeAttribute('tabindex');
+    };
+    var setGloss = function () {
+      gloss.forEach(function (g) {
+        g.open = !phone.matches;
+        var s = g.querySelector('summary');
+        if (phone.matches) s.removeAttribute('tabindex'); else s.setAttribute('tabindex', '-1');
+        reach(g);
+      });
+    };
+    gloss.forEach(function (g) {
+      g.querySelector('summary').addEventListener('click', function (e) { if (!phone.matches) e.preventDefault(); });
+    });
+    setGloss();
+    if (phone.addEventListener) phone.addEventListener('change', setGloss);
+    else if (phone.addListener) phone.addListener(setGloss);
+    window.addEventListener('resize', function () { gloss.forEach(reach); });
+  }
+
   /* ---------- Lightbox ---------- */
   if (typeof HTMLDialogElement !== 'function' || !('showModal' in HTMLDialogElement.prototype)) return;
 

@@ -16,13 +16,14 @@
 <section class="gallery" data-filter-scope>
   <div class="gallery__bar">
     <div class="container gallery__bar-inner">
-      {{ <chips id="photos" label="Select a category" filters={[["all","All"],["CACTB","CACTB"],["IEEEsb","IEEE IAUCTB"],["IEEEir","IEEE IR"],["Psimap","Psimap"],["Rahhat","Rahhat"],["FanAsa","FanAsa"],["Digikala","DK Next"]]} /> }}
+      {{ <chips id="photos" level={2} label="Select a category" filters={[["all","All"],["CACTB","CACTB"],["IEEEsb","IEEE IAUCTB"],["IEEEir","IEEE IR"],["Psimap","Psimap"],["Rahhat","Rahhat"],["FanAsa","FanAsa"],["Digikala","DK Next"]]} /> }}
     </div>
   </div>
 
   <div class="container gallery__body">
     <aside class="gallery__aside" aria-labelledby="photos-glossary">
-      <h3 class="gallery__aside-head" id="photos-glossary">Description:</h3>
+      <details class="gallery__glossary" open>
+      <summary><h3 class="label-head" id="photos-glossary">Description:</h3></summary>
       {{ <glossary entries={[
         ["IAUCTB","Azad University Central Tehran Branch","all IEEEsb CACTB"],
         ["CACTB","Computer Association of IAUCTB","CACTB"],
@@ -34,6 +35,7 @@
         ["FanAsa Academy","Academy of Specialized Courses","FanAsa"],
         ["Digikala Next","Digikala's arm of innovation, A famous Venture Capital","Digikala"]
       ]} /> }}
+      </details>
     </aside>
 
     {%- set photos = load_data(path="data/photos.yml") %}

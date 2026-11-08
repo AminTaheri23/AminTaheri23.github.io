@@ -60,9 +60,10 @@
 </ul>
 {%- endcomponent social_links %}
 
-{#- chips: filters is an array of [value, label]; "all" starts pressed. Renders the C4 label + group. -#}
-{% component chips(id: string, label: string, filters) -%}
-<h3 class="chips__label" id="{{ id }}-label">{{ label }}</h3>
+{#- chips: filters is an array of [value, label]; "all" starts pressed. Renders the C4 label + group.
+    level is the label's heading level: 3 under a section h2 (home), 2 directly under the page h1 (gallery pages). -#}
+{% component chips(id: string, label: string, filters, level: integer = 3) -%}
+<h{{ level }} class="chips__label" id="{{ id }}-label">{{ label }}</h{{ level }}>
 <div class="chips" role="group" aria-labelledby="{{ id }}-label">
 {%- for f in filters %}
   <button type="button" class="chip" data-filter="{{ f[0] }}" aria-pressed="{{ "true" if f[0] == "all" else "false" }}">{{ f[1] }}</button>

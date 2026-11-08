@@ -14,6 +14,7 @@
 /* Hallmark · dropped the category-key hover overlay Cv/Nlp/Strucdata/Etc · replaced by the human category labels listed on every project card */
 /* Hallmark · dropped _includes/services.html · the include was never rendered on any page of the old site */
 /* Hallmark · dropped /BacTermFinder.html · removed at the owner's request; it was never linked from any page */
+/* Hallmark · dropped img/header.jpg hero background · the Stage hero leads with the owner's portrait; the file still ships at its old URL */
 /* Hallmark · dropped /index.html, /gallery.html, /cert_gal.html · relinked to the Zola routes /, /gallery/ and /certificates/; the old .html URLs stay as redirect pages that keep the hash */
 /* Hallmark · relinked gallery.html to /gallery/ · Zola alias page, JS location.replace keeping the hash plus a noscript meta refresh */
 /* Hallmark · relinked cert_gal.html to /certificates/ · Zola alias page, JS location.replace keeping the hash plus a noscript meta refresh */
@@ -61,6 +62,8 @@ a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; bo
 .section-head > p { color: var(--color-ink-2); }
 .muted { color: var(--color-muted); }
 .label { font-size: var(--text-sm); font-weight: 500; line-height: 1.4; color: var(--color-muted); letter-spacing: 0; }
+/* A heading set as a label: the panel and glossary heads (Research Interest, Education, Description:). */
+.label-head { margin: 0; max-width: none; font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; line-height: 1.4; letter-spacing: 0; color: var(--color-ink); text-wrap: wrap; }
 
 /* ---------- Buttons (the Console pair) ---------- */
 .btn {
@@ -178,10 +181,14 @@ picture { display: block; }
 /* ---------- Lightbox (markup created by site.js) ---------- */
 .lightbox { width: 100%; max-width: 100%; height: 100%; max-height: 100%; margin: 0; padding: var(--space-md); border: 0; background: transparent; color: var(--color-ink); overflow: hidden; }
 .lightbox::backdrop { background: color-mix(in oklab, var(--color-paper-3) 94%, transparent); }
-.lightbox[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; gap: var(--space-sm); }
+/* Bar on top; picture, caption and controls held together and centred in what is left. */
+.lightbox[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto minmax(0, 1fr); gap: var(--space-sm); }
+.lightbox__bar { grid-row: 1; }
+.lightbox__figure { grid-row: 3; }
+.lightbox__nav { grid-row: 4; }
 .lightbox__bar { display: flex; justify-content: flex-end; gap: var(--space-xs); }
-.lightbox__figure { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: var(--space-sm); min-height: 0; margin: 0; justify-items: center; }
-.lightbox__img { max-width: 100%; max-height: 100%; width: auto; height: auto; min-height: 0; object-fit: contain; border-radius: var(--radius-card); outline: var(--rule-hair) solid var(--color-rule); outline-offset: -1px; }
+.lightbox__figure { display: grid; grid-template-rows: auto auto; align-content: center; gap: var(--space-sm); min-height: 0; margin: 0; justify-items: center; }
+.lightbox__img { max-width: 100%; max-height: calc(100svh - 2 * var(--space-md) - 4 * var(--space-sm) - 88px - 4.5rem); width: auto; height: auto; min-height: 0; object-fit: contain; border-radius: var(--radius-card); outline: var(--rule-hair) solid var(--color-rule); outline-offset: -1px; }
 .lightbox__caption { margin: 0; max-width: 65ch; text-align: center; font-size: var(--text-sm); color: var(--color-muted); }
 .lightbox__title { display: block; font-weight: 500; color: var(--color-ink); }
 .lightbox__desc { display: block; }
