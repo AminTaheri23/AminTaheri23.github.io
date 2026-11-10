@@ -13,9 +13,47 @@
 
     gtag('config', '{{ config.extra.google_analytics }}');
   </script>
-  <meta name="description" content="Personal Website">
   <meta name="author" content="{{ config.extra.author }}">
   <title>{% block title %}Amin Taheri{% endblock title %}</title>
+  {#- Link previews (Telegram, WhatsApp, X, LinkedIn, Slack...): one title, description and image per page.
+      Description: the page's `description` from its front matter, else the site description.
+      Image: a page's card og/<slug>.png; the home page, the 404 page and the rest share og/default.png.
+      scripts/og-cards.mjs draws the cards after `zola build` (the CI build job runs it). #}
+  {%- set share_title = config.title %}
+  {%- set share_desc = config.description %}
+  {%- set share_img = "og/default.png" %}
+  {%- if page is defined %}
+  {%- set share_title = page.title %}
+  {%- set share_img = "og/" ~ page.slug ~ ".png" %}
+  {%- if page.description %}{% set share_desc = page.description %}{% endif %}
+  {%- elif section is defined %}
+  {%- if section.title %}{% set share_title = section.title %}{% endif %}
+  {%- if section.description %}{% set share_desc = section.description %}{% endif %}
+  {%- endif %}
+  {%- set share_img = get_url(path=share_img) %}
+  <meta name="description" content="{{ share_desc }}">
+  {%- if current_url is defined %}
+  <link rel="canonical" href="{{ current_url }}">
+  {%- endif %}
+  <meta property="og:site_name" content="{{ config.title }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ share_title }}">
+  <meta property="og:description" content="{{ share_desc }}">
+  {%- if current_url is defined %}
+  <meta property="og:url" content="{{ current_url }}">
+  {%- endif %}
+  <meta property="og:image" content="{{ share_img }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ share_title }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@{{ config.extra.twitter_username }}">
+  <meta name="twitter:creator" content="@{{ config.extra.twitter_username }}">
+  <meta name="twitter:title" content="{{ share_title }}">
+  <meta name="twitter:description" content="{{ share_desc }}">
+  <meta name="twitter:image" content="{{ share_img }}">
+  <meta name="twitter:image:alt" content="{{ share_title }}">
   <link rel="icon" href="{{ get_url(path='img/amin.ico') }}" sizes="32x32">
   <link rel="icon" href="{{ get_url(path='img/favicon.svg') }}" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{{ get_url(path='img/apple-touch-icon.png') }}">

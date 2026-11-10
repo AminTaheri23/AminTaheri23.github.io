@@ -39,6 +39,9 @@ Switzer 500 for heads (hero at -0.04em, section heads -0.03em, line-height 1.02)
 - Every picture sits in a `.frame` on `--color-paper-3` and shows in true colour: the owner's photographs, the screenshots and the certificates. Rim's `sat=-20 con=10` photo treatment is not applied, at the owner's request.
 - Site icon: a pixel-art crop of the portrait, 32×32 in 12 flat colours on the photo's grey backdrop (`img/amin.ico` with 16/32/64, `img/favicon.svg`, `img/apple-touch-icon.png` at 36 cells ×5). Pixels stay square: every size is its own grid or a whole-number upscale.
 
+## Share cards
+- Link previews (`og/default.png` for the home page and the rest, `og/<slug>.png` for the certificates and gallery pages), 1200×630, drawn by `scripts/og-cards.mjs` from `tokens.css` in Switzer: `--color-paper` ground; the name and the site address over a `--color-rule` hairline; a 64×6 `--color-accent` mark over the title in the display face (500, `--tracking-display`, 92px stepping down to fit, balanced lines). The default card sets the name over the hero lines, with the colour portrait in a frame on the right (`--color-paper-3` ground, 1px `--color-rule` outline, square corners, no shadow).
+
 ## Phones (40rem and under)
 - The hero shows the portrait first (a 4:3 crop, visual order only), then the name and the lines.
 - Projects are compact rows: a 5rem square thumbnail beside the title and description, the rest full width under them.

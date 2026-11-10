@@ -1,7 +1,7 @@
 # Zola site configuration (Zola 0.23)
 base_url = "https://amintaheri23.github.io"
 title = "Amin Taheri"
-description = "Personal Website"
+description = "MSc in Computer Science @ MUN. Bioinformatics & Natural Language Processing & Computer Vision."
 default_language = "en"
 
 compile_sass = false

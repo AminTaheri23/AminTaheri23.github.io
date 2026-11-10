@@ -98,6 +98,7 @@ In the repository settings, **Settings → Pages → Build and deployment → So
 
 - Built with [Hallmark](https://github.com/nutlope/hallmark), Rim theme. The locked design system is [design.md](design.md).
 - Font: [Switzer](https://www.fontshare.com/fonts/switzer) (Fontshare).
+- Link previews: every page carries Open Graph and Twitter tags; `scripts/og-cards.mjs` draws the preview images into `public/og/` after `zola build` (CI runs it). A page's `description` in its front matter sets the preview text.
 - Icons: [Font Awesome Free 6](https://fontawesome.com) ([CC BY 4.0](https://fontawesome.com/license/free)), inlined as SVG.
 
 ## License

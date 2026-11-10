@@ -73,6 +73,15 @@ jobs:
       - name: Build
         run: zola build
 
+      - name: Draw link-preview cards
+        # The Open Graph images the pages point at (og/<slug>.png, og/default.png), drawn in the
+        # runner's Chrome; the script fails if a page points at a card that is not there.
+        env:
+          OG_PUPPETEER: ${{ runner.temp }}/og-cards
+        run: |
+          npm install --prefix "$OG_PUPPETEER" --no-audit --no-fund --no-save puppeteer-core@24.43.1
+          node scripts/og-cards.mjs public
+
       - name: Assert output
         run: |
           out=public
@@ -88,6 +97,9 @@ jobs:
             cv.pdf \
             AminTaheri_Jan26.pdf \
             img/amin.ico \
+            og/default.png \
+            og/certificates.png \
+            og/gallery.png \
             css/site.css \
             js/site.js
           do
