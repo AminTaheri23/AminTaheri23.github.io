@@ -37,6 +37,7 @@ Switzer 500 for heads (hero at -0.04em, section heads -0.03em, line-height 1.02)
 ## Surfaces
 - Warm black ground in three steps; panels are one surface split by 1px seams (`.panels`); nothing round, no shadow, glow or gradient.
 - Every picture sits in a `.frame` on `--color-paper-3` and shows in true colour: the owner's photographs, the screenshots and the certificates. Rim's `sat=-20 con=10` photo treatment is not applied, at the owner's request.
+- Site icon: a pixel-art crop of the portrait, 32×32 in 12 flat colours on the photo's grey backdrop (`img/amin.ico` with 16/32/64, `img/favicon.svg`, `img/apple-touch-icon.png` at 36 cells ×5). Pixels stay square: every size is its own grid or a whole-number upscale.
 
 ## Phones (40rem and under)
 - The hero shows the portrait first (a 4:3 crop, visual order only), then the name and the lines.

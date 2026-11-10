@@ -16,7 +16,9 @@
   <meta name="description" content="Personal Website">
   <meta name="author" content="{{ config.extra.author }}">
   <title>{% block title %}Amin Taheri{% endblock title %}</title>
-  <link rel="icon" href="{{ get_url(path='img/amin.ico') }}" type="image/x-icon">
+  <link rel="icon" href="{{ get_url(path='img/amin.ico') }}" sizes="32x32">
+  <link rel="icon" href="{{ get_url(path='img/favicon.svg') }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ get_url(path='img/apple-touch-icon.png') }}">
   <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap">
